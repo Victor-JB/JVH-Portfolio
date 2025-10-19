@@ -1,6 +1,6 @@
 <img src="static/resources/logo-nobg.png" alt="Joulin Logo" align="center" width="200">
 
-# 🧠 Joulin Photos QC Tool  
+# Joulin Photos QC Tool  
 *A self-hosted web platform for automated photo-based quality control in industrial shipping lines*
 
 ---
@@ -40,7 +40,7 @@ The system was deployed on-premises to automate **quality-control photo capture,
 - **Infra Automation**  
   PS1 setup scripts, Caddy reverse proxy, and webhook-triggered redeploys. 
 
-- **Check out [App FLow](APP-FLOW.md) for better idea of entire operator usage**
+- **Check out [App Flow](APP-FLOW.md) for better idea of entire operator usage**
 
 ![App Deployed](static/resources/deployed.png)
 
@@ -96,9 +96,6 @@ Then open [http://localhost:8000](http://localhost:8000).
 > increased photo traceability across manufacturing sites,  
 > and served as the foundation for future AI-assisted anomaly detection.
 
-![Segmented Gripper AI](static/resources/grippers-segmented.png)
-![Segmented Foam AI](static/resources/foam-segmented.png)
-
 ---
 
 ## 🔮 Future Extensions
@@ -107,6 +104,9 @@ Then open [http://localhost:8000](http://localhost:8000).
 - 🤖 AI-based photo anomaly detection  
 - 🌍 Multi-site deployment support (across Piab Group) 
 - 🧩 Modular API for other ERP integrations  
+
+![Segmented Gripper AI](static/resources/grippers-segmented.png)
+![Segmented Foam AI](static/resources/foam-segmented.png)
 
 ---
 
