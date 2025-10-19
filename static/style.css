@@ -1,0 +1,1295 @@
+/* ========== 0. Global reset ============================================ */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+html,
+body {
+	height: 100%;
+	height: 100vh; /* Fallback for older browsers */
+	height: 100svh; /* New unit - actual visible height */
+	background: #000;
+	color: #fff;
+	overflow: hidden;
+	touch-action: none;
+}
+
+/* ========== 1. Layout shell =========================================== */
+#app {
+	display: flex;
+	width: 100vw;
+	height: 100vh; /* Fallback */
+	height: 100svh; /* Actual visible height */
+	will-change: transform;
+	transition: transform 0.4s cubic-bezier(0.4, 0.8, 0.3, 1);
+}
+.screen {
+	flex: 0 0 100%;
+	position: relative;
+	overflow: hidden; /* clip video overscan */
+}
+
+/* ========== 2. Camera & overlay ======================================= */
+.cam-wrap {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+#cam,
+#freezeCanvas {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	pointer-events: none;
+}
+#freezeCanvas {
+	z-index: 2;
+	display: none;
+}
+#thumbCanvas {
+	display: none;
+}
+
+/* ========== 3. Fixed bottom toolbar =================================== */
+:root {
+	--bar-h: 96px;
+} /* single source of truth          */
+
+.bottom-bar {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: var(--bar-h);
+	display: grid;
+	grid-template-columns: 1fr auto 1fr; /* Three columns: flexible, fixed, flexible */
+	align-items: center;
+	padding: 0 1.2rem env(safe-area-inset-bottom);
+	background: rgba(0, 0, 0, 0.45);
+	backdrop-filter: saturate(120%) blur(10px);
+	z-index: 4;
+}
+
+@media (prefers-reduced-transparency: reduce) {
+	.bottom-bar {
+		backdrop-filter: none;
+	}
+}
+
+button,
+select {
+	background: none;
+	border: 0;
+	color: #fff;
+	cursor: pointer;
+}
+
+.aux {
+	opacity: 0.8;
+}
+.aux:hover {
+	opacity: 1;
+}
+
+/* Left column - manual enter order no button */
+#manual-input {
+	justify-self: start; /* Align to left of first column */
+}
+
+/* Center column - Shutter button */
+.shutter {
+	justify-self: center; /* Center in middle column */
+	width: 68px;
+	height: 68px;
+	border: 4px solid #fff;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.12);
+	transition: all 0.2s ease;
+}
+
+.shutter:hover {
+	background: rgba(255, 255, 255, 0.2);
+	transform: scale(1.05);
+}
+
+.shutter:active {
+	transform: scale(0.95);
+}
+
+/* Loading state for photo capture */
+.taking-photo .shutter {
+	pointer-events: none;
+	opacity: 0.5;
+	transform: scale(0.9);
+}
+
+/* Right column - Debug select */
+#debug {
+	justify-self: end; /* Align to right of third column */
+}
+
+/* ========== 4. Status badge =========================================== */
+.status {
+	position: absolute;
+	top: 1rem;
+	left: 50%;
+	transform: translateX(-50%);
+	background: rgba(0, 0, 0, 0.35);
+	padding: 0.28rem 0.8rem;
+	border-radius: 8px;
+	font-size: 0.9rem;
+	transition: all 0.3s ease;
+}
+
+.status.photo-taken {
+	background: rgba(17, 163, 79, 0.9);
+	color: white;
+}
+
+@keyframes flash {
+	0%,
+	80% {
+		background: rgba(0, 255, 128, 0.85);
+	}
+	100% {
+		background: transparent;
+	}
+}
+.number-flash {
+	animation: flash 0.5s ease-out;
+}
+
+/* ========== 5. Stand-by overlay ====================================== */
+#standby {
+	position: fixed;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #000b;
+	color: #fff;
+	font-size: 2.4rem;
+	z-index: 4;
+}
+@media (pointer: coarse) {
+	#standby {
+		backdrop-filter: blur(2px);
+	}
+}
+
+/* ========== Standby / Confirm Modal (refactored to new HTML) ========== */
+/* Overlay root */
+#standby-modal {
+	position: fixed;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 4;
+}
+#standby-modal[hidden] {
+	display: none;
+}
+
+/* Backdrop */
+#standby-modal::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: #0008;
+	backdrop-filter: blur(6px);
+}
+
+@media (prefers-reduced-transparency: reduce) {
+	#standby-modal::before {
+		backdrop-filter: none;
+	}
+}
+
+/* Content box (same visual as before) */
+#standby-modal .content {
+	position: relative;
+	min-width: 320px;
+	background: #202020;
+	color: #eee;
+	border-radius: 10px;
+	padding: 1.4rem 1.8rem;
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+	max-width: 500px;
+}
+
+#standby-modal .content h2 {
+	margin-bottom: 0.9rem;
+	font-size: 1.1rem;
+	font-weight: 600;
+}
+
+#standby-modal .modal-title {
+	margin: 0 0 0.9rem 0;
+	font-size: 1.1rem;
+	font-weight: 600;
+	color: #eee;
+}
+
+/* Manual entry wrapper visibility */
+#standby-modal .manual-wrap[hidden] {
+	display: none;
+}
+
+/* Input (unchanged) */
+#standby-modal input#orderInput {
+	width: 100%;
+	padding: 0.35rem 0.45rem;
+	margin-bottom: 0.9rem;
+	background: #111;
+	border: 1px solid #444;
+	border-radius: 4px;
+	color: #f8f8f8;
+}
+
+/* Spinner (unchanged) */
+.spinner {
+	width: 24px;
+	height: 24px;
+	margin: 1.2rem auto;
+	border: 3px solid #777;
+	border-top-color: #0a82ff;
+	border-radius: 50%;
+	animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+/* Buttons row */
+#standby-modal .btn-row {
+	display: flex;
+	gap: 0.9rem;
+	justify-content: flex-end;
+}
+
+#standby-modal .btn-row button {
+	padding: 0.45rem 1.3rem;
+	border-radius: 4px;
+	background: #333;
+	color: #fff;
+}
+
+#standby-modal .btn-row button:disabled {
+	opacity: 0.45;
+}
+
+#modal-message-body {
+	overflow-wrap: break-word;
+	margin-bottom: 1.5rem;
+	max-height: 22rem;
+	overflow-y: scroll;
+}
+
+/* --- Upload progress bar (positioned within modal) ------------------------ */
+/* Container: softer track + subtler chrome */
+#progress {
+	width: 100%;
+	margin: 1rem 0;
+	min-width: 25rem;
+	background: linear-gradient(180deg, #f8fafc, #eef2f7);
+	border: 1px solid #e6eaf0;
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+	isolation: isolate;
+}
+
+#progress[hidden] {
+	display: none;
+}
+
+/* Bar: rounded, gradient fill + shimmer */
+#progress-bar {
+	position: relative;
+	height: 12px;
+	width: 0;
+	background: linear-gradient(90deg, #60a5fa, #3b82f6);
+	border-radius: inherit;
+	transition: width 0.25s ease;
+}
+
+#progress-bar::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(
+		120deg,
+		transparent 0%,
+		rgba(255, 255, 255, 0.45) 50%,
+		transparent 100%
+	);
+	transform: translateX(-100%);
+	animation: shimmer 1.25s infinite;
+	pointer-events: none;
+	mix-blend-mode: screen;
+}
+
+@keyframes shimmer {
+	to {
+		transform: translateX(100%);
+	}
+}
+
+/* Label: lighter tone */
+#progress-label {
+	padding: 6px 10px;
+	font:
+		12px/1.2 system-ui,
+		-apple-system,
+		Segoe UI,
+		Roboto,
+		sans-serif;
+	color: #334155;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+	#progress-bar::after {
+		animation: none;
+	}
+}
+
+/* ========== 7. Sliding HUD panel ===================================== */
+#sidePanel {
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: calc(var(--bar-h) + env(safe-area-inset-bottom));
+	width: 34%;
+	max-width: 360px;
+	background: #111d;
+	color: #fff;
+	font-size: 1.05rem;
+	display: grid; /* ← grid, not flex */
+	grid-template-rows: auto 1fr auto auto; /* header | body | tray | done */
+	transform: translateX(100%);
+	transition: transform 0.3s;
+	z-index: 3;
+	box-shadow: -4px 0 12px rgba(0, 0, 0, 0.45);
+	max-height: 100%;
+	box-sizing: border-box;
+	min-width: 0;
+}
+
+#sidePanel.open {
+	transform: none;
+}
+
+#toggleHud {
+	position: absolute;
+	left: -42px;
+	top: 20px;
+	width: 42px;
+	height: 42px;
+	border: 0;
+	background: #0a82ff;
+	border-radius: 6px 0 0 6px;
+	color: #fff;
+	font-size: 1.4rem;
+	cursor: pointer;
+}
+
+/* header -------------------------------------------------------------- */
+#sidePanel > header {
+	padding: 1rem 1.2rem 0;
+	margin-bottom: 1rem;
+	min-width: 0;
+	overflow: hidden;
+}
+#sidePanel h3 {
+	margin: 0.4rem 0 0.2rem;
+	font-weight: 600;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+}
+
+/* scrollable body – stops above toolbar ------------------------------- */
+#panel-body {
+	flex: 1 1 auto;
+	overflow: auto;
+	min-height: 0;
+	padding: 0 1.2rem 1rem;
+	margin-bottom: 0; /* Remove any bottom margin that might interfere */
+	min-width: 0;
+}
+
+/* item list ----------------------------------------------------------- */
+/* item list ----------------------------------------------------------- */
+#itemList {
+	list-style: none;
+	margin: 0.8rem 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.35rem;
+	min-width: 0;
+	max-height: 13rem; /* The max-height and overflow are on the container */
+	overflow-y: scroll; /* Add scrolling to the container */
+}
+
+#itemList li {
+	padding: 0.4rem 0.5rem;
+	border: 1px solid #555;
+	border-radius: 4px;
+	display: flex;
+	justify-content: space-between;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	min-width: 0;
+	overflow: hidden;
+	flex-shrink: 0; /* Add this line to prevent shrinking */
+}
+
+#itemList li:hover {
+	border-color: #777;
+	background: rgba(255, 255, 255, 0.05);
+}
+
+#itemList li.active {
+	background: #0a82ff;
+	border-color: #0a82ff;
+}
+
+/* Photo count indicator in item list */
+#itemList li span {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	min-width: 0;
+	flex-shrink: 1;
+}
+
+/* QC loading spinner -------------------------------------------------- */
+.qc-spin {
+	width: 22px;
+	height: 22px;
+	margin: 1.2rem auto;
+	border: 3px solid #777;
+	border-top-color: #0a82ff;
+	border-radius: 50%;
+	animation: spin 1s linear infinite;
+}
+
+/* description text ---------------------------------------------------- */
+#itemDesc {
+	white-space: normal;
+	line-height: 1.3;
+	min-width: 0;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	touch-action: pan-y;
+}
+
+#itemDesc h4 {
+	margin: 0.6rem 0 0.6rem 0 !important;
+	font-size: 1rem;
+	font-weight: 600;
+	color: #fff;
+	border-bottom: 2px solid #11a34f;
+	display: inline-block;
+	max-width: 100%;
+	overflow-wrap: break-word;
+}
+
+#itemDesc p + h4 {
+	margin-top: 1rem !important;
+}
+
+/* Add spacing between sections */
+#itemDesc h4:not(:first-child) {
+	margin-top: 1.2rem !important; /* Space between sections */
+}
+
+/* checklist ----------------------------------------------------------- */
+.check-row {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.55rem;
+}
+
+.checklist {
+	margin: 0 0 0.8rem 0 !important;
+	padding: 0;
+	min-width: 0;
+}
+
+/* Row layout: checkbox + content column + add button */
+.checklist label.check-row {
+	display: flex !important;
+	align-items: flex-start;
+	gap: 0.55rem;
+	min-height: var(--cb);
+	padding: 0.4rem 0;
+	touch-action: pan-y;
+	position: relative;
+	transition: transform 0.15s ease; /* swipe */
+}
+
+.checklist label.check-row:first-child {
+	padding-top: 0.15rem;
+}
+.checklist label.check-row:last-child {
+	padding-bottom: 0.15rem;
+}
+
+.check-row.swiping {
+	transition: none;
+	will-change: transform;
+}
+.check-row.swipe-pass {
+	background: linear-gradient(90deg, rgba(17, 163, 79, 0.18), transparent);
+}
+.check-row.swipe-fail {
+	background: linear-gradient(270deg, rgba(255, 77, 79, 0.18), transparent);
+}
+
+/* Checkbox - leftmost element */
+.checklist label.check-row > input.checkbox {
+	margin: 0;
+	flex-shrink: 0;
+	transform: scale(1.5);
+	margin-right: 0.6rem;
+	margin-top: 0.3rem;
+}
+
+/* Content column (primary + hint stacked) */
+.checklist .content-column {
+	flex: 1;
+	min-width: 0;
+}
+
+.checklist .primary {
+	min-width: 0;
+	line-height: 1.2;
+	display: block;
+}
+
+.checklist .hint {
+	min-width: 0;
+	font-size: 0.82em;
+	color: #c0c0c0;
+	display: block;
+	margin-top: 0.2rem;
+}
+
+/* Add comment button - right aligned */
+.checklist label.check-row > .add-comment-btn {
+	flex-shrink: 0;
+	width: 1.6rem;
+	height: 1.6rem;
+	border-radius: 50%;
+	cursor: pointer;
+	background: #1d6ef2;
+	color: #fff;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 22px;
+	margin-left: auto;
+}
+
+/* State styling */
+label.check-row[data-state="pass"] .primary {
+	text-decoration: line-through;
+	color: #11a34f;
+}
+label.check-row[data-state="fail"] .primary {
+	text-decoration: line-through;
+	color: #ff4d4f;
+}
+
+label.check-row[data-state="pass"] input.checkbox {
+	accent-color: #11a34f;
+}
+label.check-row[data-state="fail"] input.checkbox {
+	accent-color: #ff4d4f;
+}
+
+label.check-row[data-state="pass"] {
+	background: rgba(17, 163, 79, 0.08);
+}
+label.check-row[data-state="fail"] {
+	background: rgba(255, 77, 79, 0.1);
+}
+
+@media (min-width: 768px) {
+	.checklist .primary {
+		line-height: 1.05;
+	}
+}
+
+/* ------------------------ comments styling -------------------------------- */
+/* Comment wrapper - animates the container */
+.comment-wrapper {
+	/* Use max-height instead of height: auto for smooth transitions */
+	max-height: 200px; /* Adjust based on your typical comment size */
+	margin: 6px 0 12px calc(var(--cb) + 0.55rem);
+	padding-top: 0.1rem;
+	padding-bottom: 0.1rem;
+	overflow: hidden;
+
+	/* Smooth transitions for all space-affecting properties */
+	transition:
+		max-height 0.3s ease,
+		margin 0.3s ease,
+		padding 0.3s ease,
+		opacity 0.3s ease;
+}
+
+/* Hidden state - collapses to truly zero space */
+.comment-wrapper.hidden {
+	max-height: 0 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	opacity: 0;
+}
+
+/* The textarea itself - takes full wrapper width */
+.item-comment {
+	width: 100%;
+	border-radius: 6px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	background: rgba(255, 255, 255);
+	color: black;
+	resize: vertical;
+	min-height: 2.2rem;
+	font: inherit;
+	field-sizing: content;
+
+	/* Remove all margins and padding - wrapper handles the spacing */
+	margin: 0;
+	padding: 8px 10px;
+
+	/* Use border-box so padding is included in the width calculation */
+	box-sizing: border-box;
+}
+
+.item-comment:focus {
+	outline: 0;
+	border-color: rgba(255, 255, 255);
+}
+
+/* done button – always visible --------------------------------------- */
+/* Done button spacing + safe-area */
+#doneBtn {
+	grid-row: 4;
+	justify-self: stretch; /* fill the grid track */
+	inline-size: auto; /* instead of width:100% */
+	box-sizing: border-box;
+	margin-bottom: 0.1rem;
+	padding: 1rem;
+	border-radius: 6px;
+	background: #11a34f;
+	color: #fff;
+	font-weight: 600;
+	box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+	transition: all 0.3s ease;
+}
+#doneBtn.has-data {
+	background: #11a34f;
+	box-shadow: 0 2px 8px rgba(17, 163, 79, 0.3);
+}
+
+#doneBtn.uploading {
+	background: #0a82ff;
+	position: relative;
+	overflow: hidden;
+}
+
+#doneBtn.uploading::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		90deg,
+		transparent,
+		rgba(255, 255, 255, 0.2),
+		transparent
+	);
+	animation: uploading 1.5s infinite;
+}
+
+@keyframes uploading {
+	0% {
+		left: -100%;
+	}
+	100% {
+		left: 100%;
+	}
+}
+
+/* thumbnails ---------------------------------------------------------- */
+#thumbTray {
+	display: flex;
+	gap: 0.5rem;
+	overflow-x: auto;
+	overflow-y: hidden;
+	padding-bottom: 0.2rem;
+	scroll-behavior: smooth;
+	flex-wrap: nowrap;
+	align-items: flex-start;
+	flex-direction: row;
+	min-height: 0;
+	/* Constrain to the available space in the panel */
+	max-height: 40vh; /* Use viewport percentage or fixed value that fits */
+	transition:
+		max-height 0.25s ease,
+		padding-bottom 0.25s ease,
+		margin-top 0.25s ease;
+}
+
+#thumbTrayHeader {
+	/* Styles as is, but it's now a flex item or grid item within .tray-container */
+	margin-bottom: 3px; /* This margin is fine */
+}
+#thumbTray:empty {
+	margin-top: 0;
+	padding-bottom: 0;
+	height: 0;
+}
+
+/* Collapsed state */
+#thumbTray.tray-collapsed {
+	max-height: 0 !important;
+	padding-bottom: 0;
+	margin-top: 0;
+	overflow: hidden;
+}
+
+.tray-container {
+	grid-row: 3; /* This container holds both the header and tray */
+	display: flex; /* Or grid if you need finer control */
+	flex-direction: column;
+	min-width: 0;
+	overflow: hidden;
+}
+
+/* Toggle bar */
+.tray-toggle {
+	width: 100%;
+	height: 25px;
+	display: flex;
+	align-items: center;
+	justify-content: center; /* center the icon */
+	gap: 0rem;
+	background: #0a82ff;
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	cursor: pointer;
+	user-select: none;
+	transition:
+		background 0.2s ease,
+		border-color 0.2s ease,
+		height 0.2s ease;
+	box-sizing: border-box;
+}
+
+.tray-toggle:hover {
+	background: #0a82ff;
+	border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Icons: hamburger ↔ chevron cross‑fade */
+.tray-toggle .icon {
+	/* Removed position: absolute; */
+	font-size: 16px;
+	line-height: 1;
+	/* Add these to handle icon transitions more smoothly */
+	display: flex; /* Make icons flex items to control their visibility within the toggle */
+	align-items: center;
+	justify-content: center;
+	position: relative; /* Use relative positioning to maintain its flow context */
+	transition:
+		opacity 0.18s ease,
+		transform 0.18s ease,
+		width 0.18s ease; /* Add width transition */
+}
+.tray-toggle .icon-hamburger::before {
+	content: "☰";
+} /* hamburger */
+
+.tray-toggle .icon-hamburger {
+	opacity: 1;
+	transform: translateY(0);
+	width: auto; /* Allow the hamburger to take its natural width */
+}
+.tray-toggle .icon-chevron {
+	opacity: 0;
+	width: 0; /* Initially hide the chevron by setting its width to 0 */
+	overflow: hidden; /* Hide any overflowing content */
+}
+
+.tray-toggle.collapsed .icon-hamburger {
+	opacity: 0;
+	transform: translateY(4px);
+	width: 0; /* Hide the hamburger by setting its width to 0 when collapsed */
+}
+.tray-toggle.collapsed .icon-chevron {
+	opacity: 1;
+	width: auto; /* Show the chevron by allowing it to take its natural width */
+}
+
+.photo-thumb {
+	position: relative;
+	width: auto;
+	min-width: 120px;
+	max-width: 160px;
+	height: auto;
+	/* Constrain to what fits comfortably in your interface */
+	max-height: 35vh; /* Smaller than container to ensure it fits */
+	border-radius: 6px;
+	overflow: hidden;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(0, 0, 0, 0.1);
+}
+
+.photo-thumb img {
+	max-width: 100%;
+	max-height: 100%; /* This will now respect the container's constrained height */
+	width: auto;
+	height: auto;
+	object-fit: contain;
+	display: block;
+}
+
+/* Custom scrollbar for photo tray */
+#thumbTray::-webkit-scrollbar {
+	height: 6px;
+}
+
+#thumbTray::-webkit-scrollbar-track {
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 3px;
+}
+
+#thumbTray::-webkit-scrollbar-thumb {
+	background: rgba(255, 255, 255, 0.3);
+	border-radius: 3px;
+}
+
+#thumbTray::-webkit-scrollbar-thumb:hover {
+	background: rgba(255, 255, 255, 0.5);
+}
+
+.remove-photo {
+	position: absolute;
+	top: 6px; /* Slightly adjusted for larger thumbnails */
+	right: 6px; /* Slightly adjusted for larger thumbnails */
+	width: 28px; /* Increased button size */
+	height: 28px; /* Increased button size */
+	border-radius: 50%;
+	background: rgba(255, 0, 0, 0.8);
+	color: white;
+	border: none;
+	font-size: 18px; /* Increased font size */
+	line-height: 1;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0.9;
+	transition: opacity 0.2s ease;
+}
+
+.remove-photo:hover {
+	opacity: 1;
+	background: rgba(255, 0, 0, 1);
+}
+
+/* Session resume notification ----------------------------------------- */
+.session-resume {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: #202020;
+	color: #fff;
+	padding: 1.5rem;
+	border-radius: 8px;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+	z-index: 5;
+	text-align: center;
+}
+
+.session-resume button {
+	margin: 0.5rem;
+	padding: 0.5rem 1rem;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.session-resume .resume-btn {
+	background: #11a34f;
+	color: white;
+	border: none;
+}
+
+.session-resume .new-btn {
+	background: #666;
+	color: white;
+	border: none;
+}
+
+/* Responsive adjustments ---------------------------------------------- */
+@media (max-width: 768px) {
+	.photo-thumb {
+		/* Keep consistent size on mobile for horizontal scrolling */
+		width: 100px;
+		min-width: 100px;
+	}
+
+	#thumbTray {
+		/* Ensure horizontal scrolling works on mobile */
+		-webkit-overflow-scrolling: touch;
+	}
+}
+
+/* ----------- debug hud stuff ---------------------------------------- */
+/* Debug HUD Styles */
+#debug-hud {
+	position: fixed;
+	top: 1rem;
+	left: 1rem;
+	width: 25rem;
+	z-index: 5;
+	font-family: "Courier New", monospace;
+	font-size: 11px;
+	pointer-events: auto;
+	overflow: visible; /* Important: Hides any content that overflows the fixed size */
+	box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+}
+
+.debug-panel {
+	background: rgba(0, 0, 0, 0.9);
+	color: #00ff00;
+	padding: 0.5rem;
+	border-radius: 4px;
+	border: 1px solid #00ff00;
+	min-width: 10rem;
+	display: flex;
+	flex-direction: column; /* Stack sections vertically */
+	height: 100%; /* Make the panel take the full height of the HUD */
+}
+
+.debug-section {
+	margin-bottom: 0.5rem;
+}
+
+.debug-section:last-child {
+	margin-bottom: 0;
+}
+
+.debug-section strong {
+	color: #00ffff;
+	display: block;
+	font-size: 12px;
+	margin-bottom: 0.2rem;
+	border-bottom: 1px solid #00ffff;
+}
+
+.debug-section div {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 2px;
+	flex-wrap: wrap; /* Add this line */
+}
+
+.debug-section span {
+	color: #ffff00;
+	font-weight: bold;
+	word-break: break-all;
+}
+
+/* Update your debug select to include the new option */
+#debug option[value="Show Debug HUD"] {
+	font-weight: normal;
+}
+
+#localstorage-table {
+	width: 100%; /* Ensures the table takes the full width of its container */
+	border-collapse: collapse; /* For cleaner table borders */
+	table-layout: fixed; /* Ensures column widths are fixed and content truncates if needed */
+}
+
+#localstorage-table-container {
+	flex-grow: 1; /* Allows the container to grow and take remaining space */
+	overflow: visible; /* Adds a vertical scrollbar when content exceeds the container's height */
+	max-height: none; /* Example: Limit the table's visible height within the HUD */
+	/* You might adjust max-height to fit the overall HUD design */
+}
+
+.ls-details {
+	display: block;
+}
+.ls-summary {
+	cursor: pointer;
+	user-select: none;
+	display: flex;
+	justify-content: space-between;
+	gap: 8px;
+	margin-top: 0.2rem;
+}
+.ls-preview {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	max-width: 100%;
+}
+.ls-pre {
+	margin: 6px 0 0;
+	max-height: 220px;
+	overflow: auto;
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+#localstorage-table th,
+#localstorage-table td {
+	border: 0.1rem solid #444; /* Darker border for table cells */
+	vertical-align: top;
+	padding: 0.2rem;
+	white-space: nowrap; /* Prevent text wrapping within cells */
+	overflow: hidden; /* Hide overflowing content */
+	text-overflow: ellipsis; /* Display ellipsis (...) for truncated text */
+}
+
+.dropdown-row {
+	background-color: #f0f0f0; /* Optional: style the dropdown row background */
+}
+
+.dropdown-content {
+	padding: 0.8rem;
+	max-height: 8rem; /* Set a maximum height for dropdown content */
+	overflow-y: auto; /* Make dropdown content scrollable vertically */
+	background-color: #222; /* Darker background for dropdown content */
+	border-radius: 0.3rem;
+	margin-top: 0.4rem;
+}
+
+.dropdown-content pre {
+	white-space: pre-wrap; /* Allows preformatted text to wrap within the dropdown content */
+	word-wrap: break-word; /* Breaks long words to prevent overflow */
+}
+
+.dropdown-caret {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	vertical-align: middle;
+	border-top: 0.3rem solid white; /* Upward-pointing caret by default */
+	border-right: 0.3rem solid transparent;
+	border-left: 0.3rem solid transparent;
+	transition: transform 0.2s ease-in-out; /* Smooth rotation */
+	margin-top: 0.2rem;
+}
+
+.active .dropdown-caret {
+	/* Assumes 'active' class is added to the row */
+	transform: rotate(180deg); /* Rotate to point downwards */
+	border-top: 0.3rem solid white; /* Ensures consistent color */
+}
+
+/* ------ Zoom Indicator - appears on swipe ------------------------------ */
+.zoom-indicator {
+	position: absolute;
+	left: 20px;
+	top: 50%;
+	transform: translateY(-50%);
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	z-index: 2;
+	pointer-events: none;
+}
+
+#zoom-touchzone {
+	position: absolute;
+	inset: 0;
+	z-index: 3;
+	touch-action: none;
+	pointer-events: auto;
+}
+.zoom-indicator.visible {
+	opacity: 1;
+}
+
+.zoom-scale {
+	position: relative;
+	height: 300px;
+	width: 4px;
+	background: rgba(255, 255, 255, 0.3);
+	border-radius: 2px;
+	margin-bottom: 10px;
+}
+
+.zoom-markers {
+	position: absolute;
+	left: 15px;
+	top: 0;
+	height: 100%;
+	width: 30px;
+}
+
+.zoom-marker {
+	position: absolute;
+	color: white;
+	font-size: 12px;
+	font-weight: 600;
+	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+	white-space: nowrap;
+	transform: translateY(-50%);
+	transition: all 0.2s ease;
+}
+
+.zoom-marker.active {
+	color: #ffd700;
+	font-size: 14px;
+	font-weight: 700;
+}
+
+.zoom-marker[data-zoom="1"] {
+	top: 100%;
+}
+.zoom-marker[data-zoom="3"] {
+	top: 78%;
+}
+.zoom-marker[data-zoom="5"] {
+	top: 56%;
+}
+.zoom-marker[data-zoom="8"] {
+	top: 22%;
+}
+.zoom-marker[data-zoom="10"] {
+	top: 0%;
+}
+
+.zoom-slider-track {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.zoom-slider-thumb {
+	position: absolute;
+	left: 50%;
+	width: 12px;
+	height: 12px;
+	background: white;
+	border: 2px solid #ffd700;
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+	transition: all 0.1s ease;
+	top: 100%;
+}
+
+.zoom-value-display {
+	color: white;
+	font-size: 16px;
+	font-weight: 700;
+	text-align: center;
+	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+	background: rgba(0, 0, 0, 0.5);
+	padding: 8px 12px;
+	border-radius: 20px;
+	backdrop-filter: blur(10px);
+	min-width: 50px;
+}
+
+/* Touch feedback */
+.touch-feedback {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: 2;
+}
+
+.touch-feedback::after {
+	content: "";
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	border: 2px solid rgba(255, 255, 255, 0.8);
+	border-radius: 50%;
+	opacity: 0;
+	transform: translate(-50%, -50%) scale(0.5);
+	transition: all 0.3s ease;
+}
+
+.touch-feedback.active::after {
+	opacity: 1;
+	transform: translate(-50%, -50%) scale(1);
+}
+
+/* Swipe hint animation */
+@keyframes swipeHint {
+	0%,
+	100% {
+		opacity: 0.6;
+		transform: translateY(0) translateX(-50%);
+	}
+	50% {
+		opacity: 1;
+		transform: translateY(-10px) translateX(-50%);
+	}
+}
+
+#zoom-hint {
+	top: 4rem;
+	margin-left: auto;
+	margin-right: auto;
+	animation: swipeHint 2s infinite;
+}
+
+/* Additional responsive styles */
+@media (max-width: 768px) {
+	.zoom-indicator {
+		left: 15px;
+	}
+
+	.zoom-scale {
+		height: 250px;
+	}
+
+	.zoom-marker {
+		font-size: 11px;
+	}
+
+	.zoom-value-display {
+		font-size: 14px;
+		padding: 6px 10px;
+	}
+}
+
+/* Landscape orientation adjustments */
+@media (orientation: landscape) {
+	.zoom-indicator {
+		left: 30px;
+	}
+
+	.zoom-scale {
+		height: 200px;
+	}
+}

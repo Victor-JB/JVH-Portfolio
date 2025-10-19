@@ -1,0 +1,268 @@
+=== QC SESSION: 00021208.PNEUMATIC PRODUCTS PTY LIMITED ===
+[REQ] orderNo='00021208' client='PNEUMATIC PRODUCTS PTY LIMITED' files=1 checklist_len=182
+[FOLDER] GET /drives/[id]/root:/XXXX
+[GRAPH] GET https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX (try 1/4)
+[GRAPH] -> 404
+[FOLDER] GET /drives/[id]/root:/XXXX
+[GRAPH] GET https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX (try 1/4)
+[GRAPH] -> 200
+[FOLDER] GET /drives/[id]/root:/XXXX
+[GRAPH] GET https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX (try 1/4)
+[GRAPH] -> 404
+[ENSURE] POST create order -> /drives/[id]/root:/XXXX:/children
+[GRAPH] POST https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX:/children (try 1/4)
+[GRAPH] -> 201
+[ENSURE] order created id=012ADSB5PFJU2CY4SAXFBK2TOHDWLA2CBP
+[ENSURE] id=012ADSB5PFJU2CY4SAXFBK2TOHDWLA2CBP created_customer=False created_order=True
+[UPLOAD] small PUT /drives/[id]/root:/XXXX%2F00021208_QC_2025-09-16.xlsx:/content?@microsoft.graph.conflictBehavior=rename bytes=5008 mime=application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+[GRAPH] PUT https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX%2F00021208_QC_2025-09-16.xlsx:/content?@microsoft.graph.conflictBehavior=rename (try 1/4)
+[GRAPH] -> 201
+[XLSX] uploaded '00021208_QC_2025-09-16.xlsx'
+[UPLOAD] small PUT /drives/[id]/root:/XXXX%2F0095A_2025.09.15_amb9.jpg:/content?@microsoft.graph.conflictBehavior=rename bytes=72878 mime=image/jpeg
+[GRAPH] PUT https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX%2F0095A_2025.09.15_amb9.jpg:/content?@microsoft.graph.conflictBehavior=rename (try 1/4)
+[GRAPH] -> 201
+[OK] 0095A_2025.09.15_amb9.jpg -> [sp-url]/0095A_2025.09.15_amb9.jpg
+[UPLOAD] small PUT /drives/[id]/root:/XXXX%2F0095A_2025.09.15_cbof.jpg:/content?@microsoft.graph.conflictBehavior=rename bytes=74012 mime=image/jpeg
+[GRAPH] PUT https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX%2F0095A_2025.09.15_cbof.jpg:/content?@microsoft.graph.conflictBehavior=rename (try 1/4)
+[GRAPH] -> 201
+[OK] 0095A_2025.09.15_cbof.jpg -> [sp-url]/0095A_2025.09.15_cbof.jpg
+[UPLOAD] small PUT /drives/[id]/root:/XXXX%2F0095A_2025.09.15_6u4w.jpg:/content?@microsoft.graph.conflictBehavior=rename bytes=69462 mime=image/jpeg
+[GRAPH] PUT https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX%2F0095A_2025.09.15_6u4w.jpg:/content?@microsoft.graph.conflictBehavior=rename (try 1/4)
+[GRAPH] -> 201
+[OK] 0095A_2025.09.15_6u4w.jpg -> [sp-url]/0095A_2025.09.15_6u4w.jpg
+[UPLOAD] small PUT /drives/[id]/root:/XXXX%2F0095A_2025.09.15_t8fh.jpg:/content?@microsoft.graph.conflictBehavior=rename bytes=70118 mime=image/jpeg
+[GRAPH] PUT https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX%2F0095A_2025.09.15_t8fh.jpg:/content?@microsoft.graph.conflictBehavior=rename (try 1/4)
+[GRAPH] -> 201
+[OK] 0095A_2025.09.15_t8fh.jpg -> [sp-url]/0095A_2025.09.15_t8fh.jpg
+[UPLOAD] small PUT /drives/[id]/root:/XXXX%2F0095A_2025.09.15_y6k5.jpg:/content?@microsoft.graph.conflictBehavior=rename bytes=67628 mime=image/jpeg
+[GRAPH] PUT https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX%2F0095A_2025.09.15_y6k5.jpg:/content?@microsoft.graph.conflictBehavior=rename (try 1/4)
+[GRAPH] -> 201
+[OK] 0095A_2025.09.15_y6k5.jpg -> [sp-url]/0095A_2025.09.15_y6k5.jpg
+[UPLOAD] small PUT /drives/[id]/root:/XXXX%2F0095A_2025.09.15_s776.jpg:/content?@microsoft.graph.conflictBehavior=rename bytes=69239 mime=image/jpeg
+[GRAPH] PUT https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX%2F0095A_2025.09.15_s776.jpg:/content?@microsoft.graph.conflictBehavior=rename (try 1/4)
+[GRAPH] -> 201
+[OK] 0095A_2025.09.15_s776.jpg -> [sp-url]/0095A_2025.09.15_s776.jpg
+[UPLOAD] small PUT /drives/[id]/root:/XXXX%2F0095A_2025.09.15_zesf.jpg:/content?@microsoft.graph.conflictBehavior=rename bytes=70353 mime=image/jpeg
+[GRAPH] PUT https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX%2F0095A_2025.09.15_zesf.jpg:/content?@microsoft.graph.conflictBehavior=rename (try 1/4)
+[GRAPH] -> 201
+[OK] 0095A_2025.09.15_zesf.jpg -> [sp-url]/0095A_2025.09.15_zesf.jpg
+
+=== QC SESSION: 00021209.XXXX ===
+[REQ] orderNo='00021209' client='XXXX' files=1 checklist_len=529
+[FOLDER] GET /drives/[id]/root:/XXXX
+[GRAPH] GET https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX (try 1/4)
+[GRAPH] -> 404
+[FOLDER] GET /drives/[id]/root:/XXXX
+[GRAPH] GET https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX (try 1/4)
+[GRAPH] -> 200
+[FOLDER] GET /drives/[id]/root:/XXXX
+[GRAPH] GET https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX (try 1/4)
+[GRAPH] -> 404
+[ENSURE] POST create order -> /drives/[id]/root:/XXXX:/children
+[GRAPH] POST https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX:/children (try 1/4)
+[GRAPH] -> 201
+[ENSURE] order created id=012ADSB5PU4MOCQ47BHRHJXFIQ7XKSDTTM
+[ENSURE] id=012ADSB5PU4MOCQ47BHRHJXFIQ7XKSDTTM created_customer=False created_order=True
+[UPLOAD] small PUT /drives/[id]/root:/XXXX2F00021209_QC_2025-09-12.xlsx:/content?@microsoft.graph.conflictBehavior=rename bytes=5800 mime=application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+[GRAPH] PUT https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX2F00021209_QC_2025-09-12.xlsx:/content?@microsoft.graph.conflictBehavior=rename (try 1/4)
+[GRAPH] -> 201
+[XLSX] uploaded '00021209_QC_2025-09-12.xlsx'
+[UPLOAD] small PUT /drives/[id]/root:/XXXX2F13502.06.01_2025.09.12_555w.jpg:/content?@microsoft.graph.conflictBehavior=rename bytes=62663 mime=image/jpeg
+[GRAPH] PUT https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX2F13502.06.01_2025.09.12_555w.jpg:/content?@microsoft.graph.conflictBehavior=rename (try 1/4)
+[GRAPH] -> 201
+[OK] 13502.06.01_2025.09.12_555w.jpg -> [sp-url]/13502.06.01_2025.09.12_555w.jpg
+[UPLOAD] small PUT /drives/[id]/root:/XXXX2F13502.06.01_2025.09.12_l918.jpg:/content?@microsoft.graph.conflictBehavior=rename bytes=65961 mime=image/jpeg
+[GRAPH] PUT https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX2F13502.06.01_2025.09.12_l918.jpg:/content?@microsoft.graph.conflictBehavior=rename (try 1/4)
+[GRAPH] -> 201
+[OK] 13502.06.01_2025.09.12_l918.jpg -> [sp-url]/13502.06.01_2025.09.12_l918.jpg
+[UPLOAD] small PUT /drives/[id]/root:/XXXX2F01D85_2025.09.12_t3pq.jpg:/content?@microsoft.graph.conflictBehavior=rename bytes=63186 mime=image/jpeg
+[GRAPH] PUT https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX2F01D85_2025.09.12_t3pq.jpg:/content?@microsoft.graph.conflictBehavior=rename (try 1/4)
+[GRAPH] -> 201
+[OK] 01D85_2025.09.12_t3pq.jpg -> [sp-url]/01D85_2025.09.12_t3pq.jpg
+
+=== QC SESSION: 00021209.XXXX ===
+[REQ] orderNo='00021209' client='XXXX' files=1 checklist_len=591
+[FOLDER] GET /drives/[id]/root:/XXXX
+[GRAPH] GET https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX (try 1/4)
+[GRAPH] -> 404
+[FOLDER] GET /drives/[id]/root:/XXXX
+[GRAPH] GET https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX (try 1/4)
+[GRAPH] -> 200
+[FOLDER] GET /drives/[id]/root:/XXXX
+[GRAPH] GET https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX (try 1/4)
+[GRAPH] -> 404
+[ENSURE] POST create order -> /drives/[id]/root:/XXXX:/children
+[GRAPH] POST https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX:/children (try 1/4)
+[GRAPH] -> 201
+[ENSURE] order created id=012ADSB5O5YQNLOHM6LNDZ5GFXGEBZGIOS
+[ENSURE] id=012ADSB5O5YQNLOHM6LNDZ5GFXGEBZGIOS created_customer=False created_order=True
+[UPLOAD] small PUT /drives/[id]/root:/XXXX2F00021209_QC_2025-09-12.xlsx:/content?@microsoft.graph.conflictBehavior=rename bytes=5861 mime=application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+[GRAPH] PUT https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX2F00021209_QC_2025-09-12.xlsx:/content?@microsoft.graph.conflictBehavior=rename (try 1/4)
+[GRAPH] -> 201
+[XLSX] uploaded '00021209_QC_2025-09-12.xlsx'
+[UPLOAD] small PUT /drives/[id]/root:/XXXX2F13502.06.01_2025.09.12_sspv.jpg:/content?@microsoft.graph.conflictBehavior=rename bytes=58382 mime=image/jpeg
+[GRAPH] PUT https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX2F13502.06.01_2025.09.12_sspv.jpg:/content?@microsoft.graph.conflictBehavior=rename (try 1/4)
+[GRAPH] -> 201
+[OK] 13502.06.01_2025.09.12_sspv.jpg -> [sp-url]/13502.06.01_2025.09.12_sspv.jpg
+=== QC SESSION: 00021209.XXXX ===
+[REQ] orderNo='00021209' client='XXXX' files=1 checklist_len=591
+[FOLDER] GET /drives/[id]/root:/XXXX
+[GRAPH] GET https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX (try 1/4)
+[GRAPH] -> 200
+[ENSURE] full path exists id=012ADSB5O5YQNLOHM6LNDZ5GFXGEBZGIOS
+[ENSURE] id=012ADSB5O5YQNLOHM6LNDZ5GFXGEBZGIOS created_customer=False created_order=False
+[UPLOAD] small PUT /drives/[id]/root:/XXXX2F00021209_QC_2025-09-12.xlsx:/content?@microsoft.graph.conflictBehavior=rename bytes=5858 mime=application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+[GRAPH] PUT https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX2F00021209_QC_2025-09-12.xlsx:/content?@microsoft.graph.conflictBehavior=rename (try 1/4)
+[GRAPH] -> 201
+[XLSX] uploaded '00021209_QC_2025-09-12.xlsx'
+[UPLOAD] small PUT /drives/[id]/root:/XXXX2F13502.06.01_2025.09.12_949j.jpg:/content?@microsoft.graph.conflictBehavior=rename bytes=63026 mime=image/jpeg
+[GRAPH] PUT https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX2F13502.06.01_2025.09.12_949j.jpg:/content?@microsoft.graph.conflictBehavior=rename (try 1/4)
+[GRAPH] -> 201
+[OK] 13502.06.01_2025.09.12_949j.jpg -> [sp-url]/13502.06.01_2025.09.12_949j.jpg
+[UPLOAD] small PUT /drives/[id]/root:/XXXX2F13502.06.01_2025.09.12_vmdr.jpg:/content?@microsoft.graph.conflictBehavior=rename bytes=53683 mime=image/jpeg
+[GRAPH] PUT https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX2F13502.06.01_2025.09.12_vmdr.jpg:/content?@microsoft.graph.conflictBehavior=rename (try 1/4)
+[GRAPH] -> 201
+[OK] 13502.06.01_2025.09.12_vmdr.jpg -> [sp-url]/13502.06.01_2025.09.12_vmdr.jpg
+[UPLOAD] small PUT /drives/[id]/root:/XXXX2F13502.06.01_2025.09.12_2d97.jpg:/content?@microsoft.graph.conflictBehavior=rename bytes=53535 mime=image/jpeg
+[GRAPH] PUT https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX2F13502.06.01_2025.09.12_2d97.jpg:/content?@microsoft.graph.conflictBehavior=rename (try 1/4)
+[GRAPH] -> 201
+[OK] 13502.06.01_2025.09.12_2d97.jpg -> [sp-url]/13502.06.01_2025.09.12_2d97.jpg
+
+=== QC SESSION: 00021209.XXXX ===
+[REQ] orderNo='00021209' client='XXXX' files=1 checklist_len=250
+[FOLDER] GET /drives/[id]/root:/XXXX
+[GRAPH] GET https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX (try 1/4)
+[GRAPH] -> 404
+[FOLDER] GET /drives/[id]/root:/XXXX
+[GRAPH] GET https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX (try 1/4)
+[GRAPH] -> 200
+[FOLDER] GET /drives/[id]/root:/XXXX
+[GRAPH] GET https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX (try 1/4)
+[GRAPH] -> 404
+[ENSURE] POST create order -> /drives/[id]/root:/XXXX:/children
+[GRAPH] POST https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX:/children (try 1/4)
+[GRAPH] -> 201
+[ENSURE] order created id=012ADSB5NJDPT4W3HTFZGJZ3VIJZE77HKM
+[ENSURE] id=012ADSB5NJDPT4W3HTFZGJZ3VIJZE77HKM created_customer=False created_order=True
+[UPLOAD] small PUT /drives/[id]/root:/XXXX2F00021209_QC_2025-09-10.xlsx:/content?@microsoft.graph.conflictBehavior=rename bytes=5584 mime=application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+[GRAPH] PUT https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX2F00021209_QC_2025-09-10.xlsx:/content?@microsoft.graph.conflictBehavior=rename (try 1/4)
+[GRAPH] -> 201
+[XLSX] uploaded '00021209_QC_2025-09-10.xlsx'
+[UPLOAD] small PUT /drives/[id]/root:/XXXX2F13502.06.01_2025.09.10_yyyx.jpg:/content?@microsoft.graph.conflictBehavior=rename bytes=52665 mime=image/jpeg
+[GRAPH] PUT https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX2F13502.06.01_2025.09.10_yyyx.jpg:/content?@microsoft.graph.conflictBehavior=rename (try 1/4)
+[GRAPH] -> 201
+[OK] 13502.06.01_2025.09.10_yyyx.jpg -> [sp-url]/13502.06.01_2025.09.10_yyyx.jpg
+[UPLOAD] small PUT /drives/[id]/root:/XXXX2F13502.06.01_2025.09.10_98do.jpg:/content?@microsoft.graph.conflictBehavior=rename bytes=52317 mime=image/jpeg
+[GRAPH] PUT https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX2F13502.06.01_2025.09.10_98do.jpg:/content?@microsoft.graph.conflictBehavior=rename (try 1/4)
+[GRAPH] -> 201
+[OK] 13502.06.01_2025.09.10_98do.jpg -> [sp-url]/13502.06.01_2025.09.10_98do.jpg
+[UPLOAD] small PUT /drives/[id]/root:/XXXX2F13502.06.01_2025.09.10_ye0a.jpg:/content?@microsoft.graph.conflictBehavior=rename bytes=53814 mime=image/jpeg
+[GRAPH] PUT https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX2F13502.06.01_2025.09.10_ye0a.jpg:/content?@microsoft.graph.conflictBehavior=rename (try 1/4)
+[GRAPH] -> 201
+[OK] 13502.06.01_2025.09.10_ye0a.jpg -> [sp-url]/13502.06.01_2025.09.10_ye0a.jpg
+[UPLOAD] small PUT /drives/[id]/root:/XXXX2F13502.06.01_2025.09.10_wb3v.jpg:/content?@microsoft.graph.conflictBehavior=rename bytes=53157 mime=image/jpeg
+[GRAPH] PUT https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX2F13502.06.01_2025.09.10_wb3v.jpg:/content?@microsoft.graph.conflictBehavior=rename (try 1/4)
+[GRAPH] -> 201
+[OK] 13502.06.01_2025.09.10_wb3v.jpg -> [sp-url]/13502.06.01_2025.09.10_wb3v.jpg
+
+=== QC SESSION: 00021209.XXXX ===
+[REQ] orderNo='00021209' client='XXXX' files=1 checklist_len=184
+[FOLDER] GET /drives/[id]/root:/XXXX
+[GRAPH] GET https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX (try 1/4)
+[GRAPH] -> 404
+[FOLDER] GET /drives/[id]/root:/XXXX
+[GRAPH] GET https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX (try 1/4)
+[GRAPH] -> 200
+[FOLDER] GET /drives/[id]/root:/XXXX
+[GRAPH] GET https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX (try 1/4)
+[GRAPH] -> 404
+[ENSURE] POST create order -> /drives/[id]/root:/XXXX:/children
+[GRAPH] POST https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX:/children (try 1/4)
+[GRAPH] -> 201
+[ENSURE] order created id=012ADSB5PE5FA4UW4G5RCIJNUX62VQPDHA
+[ENSURE] id=012ADSB5PE5FA4UW4G5RCIJNUX62VQPDHA created_customer=False created_order=True
+[UPLOAD] small PUT /drives/[id]/root:/XXXX2F00021209_QC_2025-09-10.xlsx:/content?@microsoft.graph.conflictBehavior=rename bytes=5535 mime=application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+[GRAPH] PUT https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX2F00021209_QC_2025-09-10.xlsx:/content?@microsoft.graph.conflictBehavior=rename (try 1/4)
+[GRAPH] -> 201
+[XLSX] uploaded '00021209_QC_2025-09-10.xlsx'
+[UPLOAD] small PUT /drives/[id]/root:/XXXX2F13502.06.01_2025.09.10_07ek.jpg:/content?@microsoft.graph.conflictBehavior=rename bytes=52575 mime=image/jpeg
+[GRAPH] PUT https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX2F13502.06.01_2025.09.10_07ek.jpg:/content?@microsoft.graph.conflictBehavior=rename (try 1/4)
+[GRAPH] -> 201
+[OK] 13502.06.01_2025.09.10_07ek.jpg -> [sp-url]/13502.06.01_2025.09.10_07ek.jpg
+[UPLOAD] small PUT /drives/[id]/root:/XXXX2F13502.06.01_2025.09.10_8ya1.jpg:/content?@microsoft.graph.conflictBehavior=rename bytes=52391 mime=image/jpeg
+[GRAPH] PUT https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX2F13502.06.01_2025.09.10_8ya1.jpg:/content?@microsoft.graph.conflictBehavior=rename (try 1/4)
+[GRAPH] -> 201
+[OK] 13502.06.01_2025.09.10_8ya1.jpg -> [sp-url]/13502.06.01_2025.09.10_8ya1.jpg
+[UPLOAD] small PUT /drives/[id]/root:/XXXX2F13502.06.01_2025.09.10_1vzz.jpg:/content?@microsoft.graph.conflictBehavior=rename bytes=52373 mime=image/jpeg
+[GRAPH] PUT https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX2F13502.06.01_2025.09.10_1vzz.jpg:/content?@microsoft.graph.conflictBehavior=rename (try 1/4)
+[GRAPH] -> 201
+[OK] 13502.06.01_2025.09.10_1vzz.jpg -> [sp-url]/13502.06.01_2025.09.10_1vzz.jpg
+
+=== QC SESSION: 00021209.XXXX ===
+[REQ] orderNo='00021209' client='XXXX' files=1 checklist_len=333
+[FOLDER] GET /drives/[id]/root:/XXXX
+[GRAPH] GET https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX (try 1/4)
+[GRAPH] -> 200
+[ENSURE] full path exists id=012ADSB5KHP4P4AYLGJZDKBMMPGIJKRSK2
+[ENSURE] id=012ADSB5KHP4P4AYLGJZDKBMMPGIJKRSK2 created_customer=False created_order=False
+[UPLOAD] small PUT /drives/[id]/root:/XXXX2F00021209_QC_2025-09-08.xlsx:/content?@microsoft.graph.conflictBehavior=rename bytes=5639 mime=application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+[GRAPH] PUT https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX2F00021209_QC_2025-09-08.xlsx:/content?@microsoft.graph.conflictBehavior=rename (try 1/4)
+[GRAPH] -> 201
+[XLSX] uploaded '00021209_QC_2025-09-08.xlsx'
+[UPLOAD] small PUT /drives/[id]/root:/XXXX2F13502.06.01_2025.09.07_b6kp.jpg:/content?@microsoft.graph.conflictBehavior=rename bytes=61122 mime=image/jpeg
+[GRAPH] PUT https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX2F13502.06.01_2025.09.07_b6kp.jpg:/content?@microsoft.graph.conflictBehavior=rename (try 1/4)
+[GRAPH] -> 201
+[OK] 13502.06.01_2025.09.07_b6kp.jpg -> [sp-url]/13502.06.01_2025.09.07_b6kp.jpg
+[UPLOAD] small PUT /drives/[id]/root:/XXXX2F13502.06.01_2025.09.07_r3yf.jpg:/content?@microsoft.graph.conflictBehavior=rename bytes=56157 mime=image/jpeg
+[GRAPH] PUT https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX2F13502.06.01_2025.09.07_r3yf.jpg:/content?@microsoft.graph.conflictBehavior=rename (try 1/4)
+[GRAPH] -> 201
+[OK] 13502.06.01_2025.09.07_r3yf.jpg -> [sp-url]/13502.06.01_2025.09.07_r3yf.jpg
+[UPLOAD] small PUT /drives/[id]/root:/XXXX2F13502.06.01_2025.09.07_suhx.jpg:/content?@microsoft.graph.conflictBehavior=rename bytes=56045 mime=image/jpeg
+[GRAPH] PUT https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX2F13502.06.01_2025.09.07_suhx.jpg:/content?@microsoft.graph.conflictBehavior=rename (try 1/4)
+[GRAPH] -> 201
+[OK] 13502.06.01_2025.09.07_suhx.jpg -> [sp-url]/13502.06.01_2025.09.07_suhx.jpg
+[UPLOAD] small PUT /drives/[id]/root:/XXXX2F13502.06.01_2025.09.07_xmax.jpg:/content?@microsoft.graph.conflictBehavior=rename bytes=57015 mime=image/jpeg
+[GRAPH] PUT https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX2F13502.06.01_2025.09.07_xmax.jpg:/content?@microsoft.graph.conflictBehavior=rename (try 1/4)
+[GRAPH] -> 201
+[OK] 13502.06.01_2025.09.07_xmax.jpg -> [sp-url]/13502.06.01_2025.09.07_xmax.jpg
+[UPLOAD] small PUT /drives/[id]/root:/XXXX2F13502.06.01_2025.09.07_by3b.jpg:/content?@microsoft.graph.conflictBehavior=rename bytes=60339 mime=image/jpeg
+[GRAPH] PUT https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX2F13502.06.01_2025.09.07_by3b.jpg:/content?@microsoft.graph.conflictBehavior=rename (try 1/4)
+[GRAPH] -> 201
+[OK] 13502.06.01_2025.09.07_by3b.jpg -> [sp-url]/13502.06.01_2025.09.07_by3b.jpg
+[UPLOAD] small PUT /drives/[id]/root:/XXXX2F13502.06.01_2025.09.07_ns87.jpg:/content?@microsoft.graph.conflictBehavior=rename bytes=58556 mime=image/jpeg
+[GRAPH] PUT https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX2F13502.06.01_2025.09.07_ns87.jpg:/content?@microsoft.graph.conflictBehavior=rename (try 1/4)
+[GRAPH] -> 201
+[OK] 13502.06.01_2025.09.07_ns87.jpg -> [sp-url]/13502.06.01_2025.09.07_ns87.jpg
+[UPLOAD] small PUT /drives/[id]/root:/XXXX2F13502.06.01_2025.09.07_fvo6.jpg:/content?@microsoft.graph.conflictBehavior=rename bytes=58290 mime=image/jpeg
+[GRAPH] PUT https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX2F13502.06.01_2025.09.07_fvo6.jpg:/content?@microsoft.graph.conflictBehavior=rename (try 1/4)
+[GRAPH] -> 201
+[OK] 13502.06.01_2025.09.07_fvo6.jpg -> [sp-url]/13502.06.01_2025.09.07_fvo6.jpg
+[UPLOAD] small PUT /drives/[id]/root:/XXXX2F13502.06.01_2025.09.07_keh3.jpg:/content?@microsoft.graph.conflictBehavior=rename bytes=59329 mime=image/jpeg
+[GRAPH] PUT https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX2F13502.06.01_2025.09.07_keh3.jpg:/content?@microsoft.graph.conflictBehavior=rename (try 1/4)
+[GRAPH] -> 201
+[OK] 13502.06.01_2025.09.07_keh3.jpg -> [sp-url]/13502.06.01_2025.09.07_keh3.jpg
+[UPLOAD] small PUT /drives/[id]/root:/XXXX2F13502.06.01_2025.09.07_hbj8.jpg:/content?@microsoft.graph.conflictBehavior=rename bytes=58674 mime=image/jpeg
+[GRAPH] PUT https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX2F13502.06.01_2025.09.07_hbj8.jpg:/content?@microsoft.graph.conflictBehavior=rename (try 1/4)
+[GRAPH] -> 201
+[OK] 13502.06.01_2025.09.07_hbj8.jpg -> [sp-url]/13502.06.01_2025.09.07_hbj8.jpg
+
+=== QC SESSION: 00021209.XXXX ===
+[REQ] orderNo='00021209' client='XXXX' files=1 checklist_len=103
+[FOLDER] GET /drives/[id]/root:/XXXX
+[GRAPH] GET https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX (try 1/4)
+[GRAPH] -> 200
+[ENSURE] full path exists id=012ADSB5KHP4P4AYLGJZDKBMMPGIJKRSK2
+[ENSURE] id=012ADSB5KHP4P4AYLGJZDKBMMPGIJKRSK2 created_customer=False created_order=False
+[UPLOAD] small PUT /drives/[id]/root:/XXXX2F00021209_QC_2025-09-05.xlsx:/content?@microsoft.graph.conflictBehavior=rename bytes=5458 mime=application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+[GRAPH] PUT https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX2F00021209_QC_2025-09-05.xlsx:/content?@microsoft.graph.conflictBehavior=rename (try 1/4)
+[GRAPH] -> 201
+[XLSX] uploaded '00021209_QC_2025-09-05.xlsx'
+[UPLOAD] small PUT /drives/[id]/root:/XXXX2F13502.06.01_2025.09.05_ylta.jpg:/content?@microsoft.graph.conflictBehavior=rename bytes=1336016 mime=image/jpeg
+[GRAPH] PUT https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX2F13502.06.01_2025.09.05_ylta.jpg:/content?@microsoft.graph.conflictBehavior=rename (try 1/4)
+[GRAPH] -> 201
+[OK] 13502.06.01_2025.09.05_ylta.jpg -> [sp-url]/13502.06.01_2025.09.05_ylta.jpg
+[UPLOAD] small PUT /drives/[id]/root:/XXXX2F13502.06.01_2025.09.05_ij4o.jpg:/content?@microsoft.graph.conflictBehavior=rename bytes=2266741 mime=image/jpeg
+[GRAPH] PUT https://graph.microsoft.com/v1.0/drives/[id]/root:/XXXX2F13502.06.01_2025.09.05_ij4o.jpg:/content?@microsoft.graph.conflictBehavior=rename (try 1/4)
+[GRAPH] -> 201
+[OK] 13502.06.01_2025.09.05_ij4o.jpg -> [sp-url]/13502.06.01_2025.09.05_ij4o.jpg
+

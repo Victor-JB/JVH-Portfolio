@@ -1,0 +1,24 @@
+{
+  "category": "Foam",
+  "in_order": 2,
+  "items": [
+    {
+      "no": "11",
+      "item": "X",
+      "spec": "<2mm",
+      "tool": "Straight edge/rule"
+    },
+    {
+      "no": "12",
+      "item": "X",
+      "spec": "",
+      "tool": "Touch/ visual"
+    },
+    {
+      "no": "13",
+      "item": "X",
+      "spec": "See chart",
+      "tool": "Rule"
+    }
+  ]
+}

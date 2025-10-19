@@ -1,0 +1,85 @@
+
+FIX GETTING SUCCESSFUL RESPONSE FROM SHAREPOINT WHEN RESPONSE IS IN FACT 
+NOT SUCCESSFUL (403?)
+
+
+Note: Haphazard list of todos I made for my own stream of consciousness
+
+Big stuff in general for the app:
+1. unit tests / deployment tests
+2. refactoring big stuff (like putting stuff into separate classes (modal, session manager?))
+
+For me:
+2. Get Local dns record
+4. Rewrite proper todos (this file) + docs for Ethan + others
+ - AI docs
+ - better readme
+
+AI maybe--I have found more promising avenues to document possibly
+
+Joulin to fix
+2. Speed up the upload time / ensure no unnecessary calls to sharepoint slowing things down…
+ - There's highk probably like one unecessary call being made when checking if the folders 
+   exist and creating them if they don't; I think it calls the same GET request twice which is
+   unecessary
+
+- reduce number of api calls
+- refactor big uploads folder into modules for api
+- refactor api folders in general; not just big_stuff/ and a routes/ for the rest
+
+
+todos before leaving:
+1. readme, docs in general, AI stuff, setup stuff, etc.
+2. refactor--code is as good as I can make it in this time
+
+featues:
+4.5 buy strap and peripherals for mark + saul??
+5. documentation—for AI (will help with presentation), converting to shipping, etc.
+7. optimizations for ethan
+ - can cut down amount of data sending to /upload endpoint—doesn't need all of that,
+ would just require refactor of session manager storage
+
+2. ethan finish:
+ - how to wire up shipping portion of it
+ - the ai side of things... we can debrief here
+
+Also need to get vision working, combination of SAM 2 and smth else?? 
+I was thinking sam 2 for segmentation, then using something else 
+
+--------------------------------------------------------------------------------
+
+5. get something working for ai
+ - count gd installed and hopefully working
+
+
+[OLD] AI todos:
+Hard parts:
+2. really tweak with types of models, architectures, and data processing techniques
+3. maybe some deployment problems with model speed or whatever
+
+
+Backend web feature todos:
+2. getting custom local dns domain name for ease
+
+AI feature todos:
+1. Taking photo themselves skips the counting step when running ml
+
+Next Step ideas:
+- add on part failure detection / bad parts in addition, just final QC check
+
+Where to aim next
+Record every low-confidence inference to a “to-label” queue; a quick Label Studio setup will let you burn through them fast.
+After the demo proves throughput, port the same React components into SwiftUI for the production iPad app.
+
+
+1. webapp that can do basic starter detection
+2. webapp can save photos for later training
+3. implementing cloud queue with celery or something
+
+model stack:
+1. yolov9 segment for first layer, local
+2. grounded sam for fallback
+3. density map counter (csrnet) for counting stacks or small items
+
+The plan:
+1. start with manual, but gets better at tuning with more photos. Flag which photos are bad, make them better 

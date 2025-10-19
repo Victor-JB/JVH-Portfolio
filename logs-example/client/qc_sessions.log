@@ -1,0 +1,460 @@
+=== QC SESSION: 00021209 ===
+Session ID: 00021209-1759440434812
+Device: web (Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36)
+App Version: 1.0.5
+2025-10-02 14:27:07 [desktop] Supported camera dim range: 1280x720
+2025-10-02 14:27:08 [desktop] Camera does not support zoom
+2025-10-02 14:27:08 [desktop] [START_CAM] Camera started: 1280x720
+2025-10-02 14:27:08 [desktop] [INIT] Camera started, global & logging listeners ready, HUD mounted, debugHUD mounted
+2025-10-02 14:27:08 [desktop] [RESUME_PROMPT] No drafts found
+2025-10-02 14:27:08 [desktop] [WAITING_SCAN] Waiting for barcode…
+2025-10-02 14:27:08 [desktop] [idb-photos] DB opened
+2025-10-02 14:27:13 [desktop] [WAITING_SCAN] SO 00021209 • items: 2 {"customer":"XXXXX"}
+2025-10-02 14:27:14 [desktop] [LOADING] No existing Sharepoint photos for this order.
+2025-10-02 14:27:14 [desktop] [SESSION-MANAGER LISTENER] Session init 00021209
+2025-10-02 14:27:14 [desktop] [LOADING] HUD initialized with content
+2025-10-02 14:27:14 [desktop] [READY] Operator is interacting with the app...
+2025-10-02 15:15:02 [desktop] Offline... hydrating offline queue
+2025-10-02 15:15:14 [desktop] [FLUSH_OFFLINE] 1 offline logs found, uploading...
+2025-10-02 15:15:27 [desktop] Flush errored on at least one payload; 1 remaining offline sessions to push
+2025-10-02 15:16:03 [desktop] Offline... hydrating offline queue
+2025-10-02 15:16:12 [desktop] [FLUSH_OFFLINE] 2 offline logs found, uploading...
+2025-10-02 15:23:15 [desktop] Offline... hydrating offline queue
+2025-10-02 15:23:20 [desktop] [FLUSH_OFFLINE] 1 offline logs found, uploading...
+2025-10-02 15:24:49 [desktop] Offline... hydrating offline queue
+2025-10-02 15:24:57 [desktop] [FLUSH_OFFLINE] 1 offline logs found, uploading...
+2025-10-02 17:12:45 [desktop] Offline... hydrating offline queue
+2025-10-02 17:12:53 [desktop] [FLUSH_OFFLINE] 1 offline logs found, uploading...
+2025-10-02 18:37:37 [desktop] Offline... hydrating offline queue
+2025-10-02 18:37:42 [desktop] [FLUSH_OFFLINE] 1 offline logs found, uploading...
+2025-10-02 18:38:33 [desktop] Offline... hydrating offline queue
+2025-10-02 18:38:39 [desktop] [FLUSH_OFFLINE] 1 offline logs found, uploading...
+2025-10-02 18:39:36 [desktop] Offline... hydrating offline queue
+2025-10-02 18:39:40 [desktop] [FLUSH_OFFLINE] 1 offline logs found, uploading...
+2025-10-02 18:40:53 [desktop] Offline... hydrating offline queue
+2025-10-02 18:40:58 [desktop] [FLUSH_OFFLINE] 1 offline logs found, uploading...
+2025-10-02 18:42:58 [desktop] Offline... hydrating offline queue
+2025-10-02 18:43:03 [desktop] [FLUSH_OFFLINE] 1 offline logs found, uploading...
+2025-10-02 18:44:30 [desktop] Offline... hydrating offline queue
+2025-10-02 18:44:36 [desktop] [FLUSH_OFFLINE] 1 offline logs found, uploading...
+2025-10-02 18:45:20 [desktop] Offline... hydrating offline queue
+2025-10-02 18:45:25 [desktop] [FLUSH_OFFLINE] 1 offline logs found, uploading...
+2025-10-02 18:46:08 [desktop] Offline... hydrating offline queue
+2025-10-02 18:46:13 [desktop] [FLUSH_OFFLINE] 1 offline logs found, uploading...
+2025-10-02 18:46:59 [desktop] Offline... hydrating offline queue
+2025-10-02 18:47:05 [desktop] [FLUSH_OFFLINE] 1 offline logs found, uploading...
+2025-10-02 18:47:59 [desktop] Offline... hydrating offline queue
+2025-10-02 18:48:03 [desktop] [FLUSH_OFFLINE] 1 offline logs found, uploading...
+2025-10-02 19:35:33 [desktop] Offline... hydrating offline queue
+2025-10-02 19:35:38 [desktop] [FLUSH_OFFLINE] 1 offline logs found, uploading...
+2025-10-02 19:36:36 [desktop] Offline... hydrating offline queue
+2025-10-02 19:36:42 [desktop] [FLUSH_OFFLINE] 1 offline logs found, uploading...
+2025-10-02 19:37:36 [desktop] Offline... hydrating offline queue
+2025-10-02 19:37:41 [desktop] [FLUSH_OFFLINE] 1 offline logs found, uploading...
+2025-10-02 19:38:21 [desktop] Offline... hydrating offline queue
+2025-10-02 19:38:27 [desktop] [FLUSH_OFFLINE] 1 offline logs found, uploading...
+2025-10-02 19:39:27 [desktop] Offline... hydrating offline queue
+2025-10-02 19:39:32 [desktop] [FLUSH_OFFLINE] 1 offline logs found, uploading...
+2025-10-02 19:40:58 [desktop] Offline... hydrating offline queue
+2025-10-02 19:41:04 [desktop] [FLUSH_OFFLINE] 1 offline logs found, uploading...
+2025-10-02 19:41:50 [desktop] Offline... hydrating offline queue
+2025-10-02 19:41:55 [desktop] [FLUSH_OFFLINE] 1 offline logs found, uploading...
+2025-10-02 19:42:30 [desktop] Offline... hydrating offline queue
+2025-10-02 19:42:34 [desktop] [FLUSH_OFFLINE] 1 offline logs found, uploading...
+2025-10-02 19:43:19 [desktop] Offline... hydrating offline queue
+2025-10-02 19:43:23 [desktop] [FLUSH_OFFLINE] 1 offline logs found, uploading...
+2025-10-02 20:53:19 [desktop] Offline... hydrating offline queue
+2025-10-02 20:53:40 [desktop] [FLUSH_OFFLINE] 1 offline logs found, uploading...
+2025-10-02 20:54:00 [desktop] Flush errored on at least one payload; 1 remaining offline sessions to push
+2025-10-02 20:54:15 [desktop] Offline... hydrating offline queue
+2025-10-02 20:54:29 [desktop] [FLUSH_OFFLINE] 2 offline logs found, uploading...
+2025-10-02 21:41:33 [desktop] Offline... hydrating offline queue
+2025-10-02 21:41:41 [desktop] [FLUSH_OFFLINE] 1 offline logs found, uploading...
+2025-10-02 21:42:31 [desktop] Offline... hydrating offline queue
+2025-10-02 21:42:41 [desktop] [FLUSH_OFFLINE] 1 offline logs found, uploading...
+2025-10-02 21:43:55 [desktop] Offline... hydrating offline queue
+2025-10-02 21:44:07 [desktop] [FLUSH_OFFLINE] 1 offline logs found, uploading...
+2025-10-02 21:44:57 [desktop] Offline... hydrating offline queue
+2025-10-02 21:45:03 [desktop] [FLUSH_OFFLINE] 1 offline logs found, uploading...
+2025-10-02 21:45:58 [desktop] Offline... hydrating offline queue
+2025-10-02 21:46:03 [desktop] [FLUSH_OFFLINE] 1 offline logs found, uploading...
+2025-10-02 21:46:41 [desktop] Offline... hydrating offline queue
+2025-10-02 21:46:46 [desktop] [FLUSH_OFFLINE] 1 offline logs found, uploading...
+2025-10-02 22:44:33 [desktop] Offline... hydrating offline queue
+2025-10-02 22:44:38 [desktop] [FLUSH_OFFLINE] 1 offline logs found, uploading...
+2025-10-03 07:00:19 [desktop] Offline... hydrating offline queue
+2025-10-03 07:00:23 [desktop] [FLUSH_OFFLINE] 1 offline logs found, uploading...
+2025-10-03 07:12:15 [desktop] Offline... hydrating offline queue
+2025-10-03 07:12:20 [desktop] [FLUSH_OFFLINE] 1 offline logs found, uploading...
+2025-10-03 08:13:18 [desktop] Offline... hydrating offline queue
+2025-10-03 08:13:22 [desktop] [FLUSH_OFFLINE] 1 offline logs found, uploading...
+2025-10-03 09:14:20 [desktop] Offline... hydrating offline queue
+2025-10-03 09:14:24 [desktop] [FLUSH_OFFLINE] 1 offline logs found, uploading...
+2025-10-03 10:15:23 [desktop] Offline... hydrating offline queue
+2025-10-03 10:15:27 [desktop] [FLUSH_OFFLINE] 1 offline logs found, uploading...
+
+=== QC SESSION: 00021209 ===
+Session ID: 00021209-1757987441580
+Device: web (Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36)
+App Version: 1.0.5
+2025-09-15 18:50:27 [desktop] Supported camera dim range: 1280x720
+2025-09-15 18:50:28 [desktop] Camera does not support zoom
+2025-09-15 18:50:28 [desktop] [START_CAM] Camera started: 1280x720
+2025-09-15 18:50:28 [desktop] [INIT] Camera started, global & logging listeners ready, HUD mounted, debugHUD mounted
+2025-09-15 18:50:28 [desktop] [RESUME_PROMPT] Found 1 draft(s)
+2025-09-15 18:50:29 [desktop] [RESUME_PROMPT] User chose NOT to resume session 00021208
+2025-09-15 18:50:29 [desktop] [WAITING_SCAN] Waiting for barcode…
+2025-09-15 18:50:29 [desktop] [idb-photos] DB opened
+2025-09-15 18:50:37 [desktop] [ERROR] Invalid code '00021209\' scanned
+2025-09-15 18:50:37 [desktop] [WAITING_SCAN] Waiting for barcode…
+2025-09-15 18:50:40 [desktop] [WAITING_SCAN] SO 00021209 • items: 2 {"customer":"XXXX"}
+2025-09-15 18:50:41 [desktop] [LOADING] No existing Sharepoint photos for this order.
+2025-09-15 18:50:41 [desktop] [SESSION-MANAGER LISTENER] Session init 00021209
+2025-09-15 18:50:41 [desktop] [LOADING] HUD initialized with content
+2025-09-15 18:50:41 [desktop] [READY] Operator is interacting with the app...
+2025-09-15 18:57:08 [desktop] [UPLOAD_SESSION] photos: 0 • checks: 4 • items: 2 {"photoCount":0,"checkCount":4,"itemCount":2}
+2025-09-15 18:57:08 [desktop] [UPLOAD_SESSION] Session uploaded successfully
+
+=== QC SESSION: 00021208 ===
+Session ID: 00021208-1757986301186
+Device: web (Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36)
+App Version: 1.0.5
+2025-09-15 18:31:35 [desktop] Supported camera dim range: 1280x720
+2025-09-15 18:31:36 [desktop] Camera does not support zoom
+2025-09-15 18:31:36 [desktop] [START_CAM] Camera started: 1280x720
+2025-09-15 18:31:36 [desktop] [INIT] Camera started, global & logging listeners ready, HUD mounted, debugHUD mounted
+2025-09-15 18:31:36 [desktop] [RESUME_PROMPT] Found 1 draft(s)
+2025-09-15 18:31:38 [desktop] [RESUME_PROMPT] User chose NOT to resume session 00021209
+2025-09-15 18:31:38 [desktop] [WAITING_SCAN] Waiting for barcode…
+2025-09-15 18:31:38 [desktop] [idb-photos] DB opened
+2025-09-15 18:31:40 [desktop] [WAITING_SCAN] SO 00021208 • items: 1 {"customer":"XXXX"}
+2025-09-15 18:31:41 [desktop] [LOADING] No existing Sharepoint photos for this order.
+2025-09-15 18:31:41 [desktop] [SESSION-MANAGER LISTENER] Session init 00021208
+2025-09-15 18:31:41 [desktop] [LOADING] HUD initialized with content
+2025-09-15 18:31:41 [desktop] [READY] Operator is interacting with the app...
+2025-09-15 18:32:06 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-15 18:32:08 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-15 18:32:09 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-15 18:32:10 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-15 18:32:10 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-15 18:32:11 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-15 18:32:11 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-15 18:32:18 [desktop] [UPLOAD_SESSION] photos: 7 • checks: 3 • items: 1 {"photoCount":7,"checkCount":3,"itemCount":1}
+2025-09-15 18:32:35 [desktop] [UPLOAD_SESSION] Session uploaded successfully
+
+=== QC SESSION: 00021209 ===
+Session ID: 00021209-1757709237608
+Device: web (Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36)
+App Version: 1.0.5
+2025-09-12 16:26:17 [desktop] Supported camera dim range: 1280x720
+2025-09-12 16:26:18 [desktop] Camera does not support zoom
+2025-09-12 16:26:18 [desktop] [START_CAM] Camera started: 1280x720
+2025-09-12 16:26:18 [desktop] [INIT] Camera started, global & logging listeners ready, HUD mounted, debugHUD mounted
+2025-09-12 16:26:18 [desktop] [RESUME_PROMPT] Found 1 draft(s)
+2025-09-12 16:26:19 [desktop] [RESUME_PROMPT] User chose to resume session 00021209
+2025-09-12 16:32:58 [desktop] ok
+2025-09-12 16:32:58 [desktop] [WAITING_SCAN] Waiting for barcode…
+2025-09-12 16:33:47 [desktop] [WAITING_SCAN] SO 00021209 • items: 2 {"customer":"XXXX"}
+2025-09-12 16:33:48 [desktop] [LOADING] Existing photos found in Sharepoint
+2025-09-12 16:33:57 [desktop] [LOADING] Operator will append; 3 existing photo(s) found.
+2025-09-12 16:33:57 [desktop] [SESSION-MANAGER LISTENER] Session init 00021209
+2025-09-12 16:33:57 [desktop] [LOADING] HUD initialized with content
+2025-09-12 16:33:57 [desktop] [READY] Operator is interacting with the app...
+2025-09-12 16:34:15 [desktop] [UPLOAD_SESSION] photos: 0 • checks: 0 • items: 2 {"photoCount":0,"checkCount":0,"itemCount":2}
+2025-09-12 16:34:15 [desktop] [UPLOAD_SESSION] Session uploaded successfully
+
+=== QC SESSION: 00021209 ===
+Session ID: 00021209-1757706607713
+Device: web (Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36)
+App Version: 1.0.5
+2025-09-12 15:48:11 [desktop] Supported camera dim range: 1280x720
+2025-09-12 15:48:12 [desktop] Camera does not support zoom
+2025-09-12 15:48:12 [desktop] [START_CAM] Camera started: 1280x720
+2025-09-12 15:48:12 [desktop] [INIT] Camera started, global & logging listeners ready, HUD mounted, debugHUD mounted
+2025-09-12 15:48:12 [desktop] [RESUME_PROMPT] Found 1 draft(s)
+2025-09-12 15:48:14 [desktop] [RESUME_PROMPT] User chose NOT to resume session 00021209
+2025-09-12 15:48:14 [desktop] [WAITING_SCAN] Waiting for barcode…
+2025-09-12 15:48:14 [desktop] [idb-photos] DB opened
+2025-09-12 15:48:52 [desktop] Shutter error: No active session
+2025-09-12 15:48:52 [desktop] Shutter error: No active session
+2025-09-12 15:50:06 [desktop] [WAITING_SCAN] SO 00021209 • items: 2 {"customer":"XXXX"}
+2025-09-12 15:50:07 [desktop] [LOADING] No existing Sharepoint photos for this order.
+2025-09-12 15:50:07 [desktop] [SESSION-MANAGER LISTENER] Session init 00021209
+2025-09-12 15:50:07 [desktop] [LOADING] HUD initialized with content
+2025-09-12 15:50:07 [desktop] [READY] Operator is interacting with the app...
+2025-09-12 16:19:03 [desktop] Supported camera dim range: 1280x720
+2025-09-12 16:19:03 [desktop] Camera does not support zoom
+2025-09-12 16:19:03 [desktop] [START_CAM] Camera started: 1280x720
+2025-09-12 16:19:03 [desktop] [INIT] Camera started, global & logging listeners ready, HUD mounted, debugHUD mounted
+2025-09-12 16:19:03 [desktop] [RESUME_PROMPT] Found 1 draft(s)
+2025-09-12 16:19:04 [desktop] [RESUME_PROMPT] User chose to resume session 00021209
+2025-09-12 16:19:04 [desktop] [RESUME_PROMPT] Resumed session 00021209
+2025-09-12 16:19:04 [desktop] [idb-photos] DB opened
+2025-09-12 16:19:04 [desktop] [LOADING] HUD initialized with content
+2025-09-12 16:19:04 [desktop] [READY] Operator is interacting with the app...
+2025-09-12 16:22:14 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 16:22:27 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 16:22:27 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 16:22:27 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 16:22:28 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 16:22:28 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 16:22:28 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 16:22:29 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 16:22:49 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 16:22:56 [desktop] Supported camera dim range: 1280x720
+2025-09-12 16:22:57 [desktop] Camera does not support zoom
+2025-09-12 16:22:57 [desktop] [START_CAM] Camera started: 1280x720
+2025-09-12 16:22:57 [desktop] [INIT] Camera started, global & logging listeners ready, HUD mounted, debugHUD mounted
+2025-09-12 16:22:57 [desktop] [RESUME_PROMPT] Found 1 draft(s)
+2025-09-12 16:22:58 [desktop] [RESUME_PROMPT] User chose to resume session 00021209
+2025-09-12 16:22:58 [desktop] [RESUME_PROMPT] Resumed session 00021209
+2025-09-12 16:22:58 [desktop] [idb-photos] DB opened
+2025-09-12 16:22:58 [desktop] [LOADING] HUD initialized with content
+2025-09-12 16:22:58 [desktop] [READY] Operator is interacting with the app...
+2025-09-12 16:23:59 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 16:24:02 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 16:24:06 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 16:24:06 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 16:24:07 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 16:24:07 [desktop] Potential memory leak detected: 0.9MB/interval growth rate
+2025-09-12 16:24:13 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 16:24:14 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 16:24:14 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 16:24:14 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 16:24:14 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 16:24:15 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 16:24:15 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 16:24:17 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 16:24:17 [desktop] Potential memory leak detected: 0.6MB/interval growth rate
+2025-09-12 16:24:18 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 16:24:18 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 16:24:18 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 16:24:18 [desktop] Potential memory leak detected: 1.1MB/interval growth rate
+2025-09-12 16:24:19 [desktop] Potential memory leak detected: 0.8MB/interval growth rate
+2025-09-12 16:24:50 [desktop] Supported camera dim range: 1280x720
+2025-09-12 16:24:52 [desktop] Camera does not support zoom
+2025-09-12 16:24:52 [desktop] [START_CAM] Camera started: 1280x720
+2025-09-12 16:24:52 [desktop] [INIT] Camera started, global & logging listeners ready, HUD mounted, debugHUD mounted
+2025-09-12 16:24:52 [desktop] [RESUME_PROMPT] Found 1 draft(s)
+2025-09-12 16:24:53 [desktop] [RESUME_PROMPT] User chose to resume session 00021209
+2025-09-12 16:24:53 [desktop] [RESUME_PROMPT] Resumed session 00021209
+2025-09-12 16:24:53 [desktop] [idb-photos] DB opened
+2025-09-12 16:24:53 [desktop] [LOADING] HUD initialized with content
+2025-09-12 16:24:53 [desktop] [READY] Operator is interacting with the app...
+2025-09-12 16:24:59 [desktop] Supported camera dim range: 1280x720
+2025-09-12 16:25:00 [desktop] Camera does not support zoom
+2025-09-12 16:25:00 [desktop] [START_CAM] Camera started: 1280x720
+2025-09-12 16:25:00 [desktop] [INIT] Camera started, global & logging listeners ready, HUD mounted, debugHUD mounted
+2025-09-12 16:25:00 [desktop] [RESUME_PROMPT] Found 1 draft(s)
+2025-09-12 16:25:02 [desktop] [RESUME_PROMPT] User chose to resume session 00021209
+2025-09-12 16:25:02 [desktop] [RESUME_PROMPT] Resumed session 00021209
+2025-09-12 16:25:02 [desktop] [idb-photos] DB opened
+2025-09-12 16:25:02 [desktop] [LOADING] HUD initialized with content
+2025-09-12 16:25:02 [desktop] [READY] Operator is interacting with the app...
+2025-09-12 16:26:17 [desktop] Supported camera dim range: 1280x720
+2025-09-12 16:26:18 [desktop] Camera does not support zoom
+2025-09-12 16:26:18 [desktop] [START_CAM] Camera started: 1280x720
+2025-09-12 16:26:18 [desktop] [INIT] Camera started, global & logging listeners ready, HUD mounted, debugHUD mounted
+2025-09-12 16:26:18 [desktop] [RESUME_PROMPT] Found 1 draft(s)
+2025-09-12 16:26:19 [desktop] [RESUME_PROMPT] User chose to resume session 00021209
+2025-09-12 16:26:19 [desktop] [RESUME_PROMPT] Resumed session 00021209
+2025-09-12 16:26:19 [desktop] [idb-photos] DB opened
+2025-09-12 16:26:19 [desktop] [LOADING] HUD initialized with content
+2025-09-12 16:26:19 [desktop] [READY] Operator is interacting with the app...
+2025-09-12 16:32:43 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 16:32:44 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 16:32:47 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 16:32:52 [desktop] [UPLOAD_SESSION] photos: 3 • checks: 8 • items: 2 {"photoCount":3,"checkCount":8,"itemCount":2}
+2025-09-12 16:32:58 [desktop] [UPLOAD_SESSION] Session uploaded successfully
+
+=== QC SESSION: 00021209 ===
+Session ID: 00021209-1757702761675
+Device: web (Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36)
+App Version: 1.0.5
+2025-09-12 15:07:13 [desktop] [ERROR] [UPLOADING] Upload failed: this.updateSessionChangeButton is not a function
+2025-09-12 15:07:13 [desktop] [READY] Operator is interacting with the app...
+2025-09-12 15:08:55 [desktop] Supported camera dim range: 1280x720
+2025-09-12 15:08:55 [desktop] Camera does not support zoom
+2025-09-12 15:08:55 [desktop] [START_CAM] Camera started: 1280x720
+2025-09-12 15:08:55 [desktop] [INIT] Camera started, global & logging listeners ready, HUD mounted, debugHUD mounted
+2025-09-12 15:08:55 [desktop] [RESUME_PROMPT] Found 1 draft(s)
+2025-09-12 15:08:56 [desktop] [RESUME_PROMPT] User chose to resume session 00021209
+2025-09-12 15:08:56 [desktop] [RESUME_PROMPT] Resumed session 00021209
+2025-09-12 15:08:56 [desktop] [idb-photos] DB opened
+2025-09-12 15:08:56 [desktop] [LOADING] HUD initialized with content
+2025-09-12 15:08:56 [desktop] [READY] Operator is interacting with the app...
+2025-09-12 15:09:10 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 15:09:11 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 15:09:15 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 15:09:19 [desktop] [UPLOAD_SESSION] photos: 3 • checks: 12 • items: 2 {"photoCount":3,"checkCount":12,"itemCount":2}
+2025-09-12 15:09:23 [desktop] [UPLOAD_SESSION] Session uploaded successfully
+
+=== QC SESSION: 00021209 ===
+Session ID: 00021209-1757702761675
+Device: web (Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36)
+App Version: 1.0.5
+2025-09-12 14:45:54 [desktop] Supported camera dim range: 1280x720
+2025-09-12 14:45:54 [desktop] Camera does not support zoom
+2025-09-12 14:45:54 [desktop] [START_CAM] Camera started: 1280x720
+2025-09-12 14:45:54 [desktop] [INIT] Camera started, global & logging listeners ready, HUD mounted, debugHUD mounted
+2025-09-12 14:45:54 [desktop] [RESUME_PROMPT] Found 1 draft(s)
+2025-09-12 14:45:56 [desktop] [RESUME_PROMPT] User chose NOT to resume session 00021209
+2025-09-12 14:45:56 [desktop] [WAITING_SCAN] Waiting for barcode…
+2025-09-12 14:45:56 [desktop] [idb-photos] DB opened
+2025-09-12 14:46:00 [desktop] [WAITING_SCAN] SO 00021209 • items: 2 {"customer":"XXXX"}
+2025-09-12 14:46:01 [desktop] [LOADING] No existing Sharepoint photos for this order.
+2025-09-12 14:46:01 [desktop] [SESSION-MANAGER LISTENER] Session init 00021209
+2025-09-12 14:46:01 [desktop] [LOADING] HUD initialized with content
+2025-09-12 14:46:01 [desktop] [READY] Operator is interacting with the app...
+2025-09-12 14:50:12 [desktop] Supported camera dim range: 1280x720
+2025-09-12 14:50:13 [desktop] Camera does not support zoom
+2025-09-12 14:50:13 [desktop] [START_CAM] Camera started: 1280x720
+2025-09-12 14:50:13 [desktop] [INIT] Camera started, global & logging listeners ready, HUD mounted, debugHUD mounted
+2025-09-12 14:50:13 [desktop] [RESUME_PROMPT] Found 1 draft(s)
+2025-09-12 14:50:15 [desktop] [RESUME_PROMPT] User chose to resume session 00021209
+2025-09-12 14:50:15 [desktop] [RESUME_PROMPT] Resumed session 00021209
+2025-09-12 14:50:15 [desktop] [LOADING] HUD initialized with content
+2025-09-12 14:50:15 [desktop] [READY] Operator is interacting with the app...
+2025-09-12 14:50:15 [desktop] [idb-photos] DB opened
+2025-09-12 14:50:19 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 14:50:19 [desktop] Shutter error: this.onPhotoCaptured is not a function
+2025-09-12 14:52:38 [desktop] Supported camera dim range: 1280x720
+2025-09-12 14:52:39 [desktop] Camera does not support zoom
+2025-09-12 14:52:39 [desktop] [START_CAM] Camera started: 1280x720
+2025-09-12 14:52:39 [desktop] [INIT] Camera started, global & logging listeners ready, HUD mounted, debugHUD mounted
+2025-09-12 14:52:39 [desktop] [RESUME_PROMPT] Found 1 draft(s)
+2025-09-12 14:52:41 [desktop] [RESUME_PROMPT] User chose to resume session 00021209
+2025-09-12 14:52:41 [desktop] [RESUME_PROMPT] Resumed session 00021209
+2025-09-12 14:52:41 [desktop] [LOADING] HUD initialized with content
+2025-09-12 14:52:41 [desktop] [READY] Operator is interacting with the app...
+2025-09-12 14:52:41 [desktop] [idb-photos] DB opened
+2025-09-12 14:52:45 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 14:52:46 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 14:52:48 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 14:52:49 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 14:52:49 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 14:52:49 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 14:52:49 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 14:52:49 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 14:52:50 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 14:52:50 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 14:52:51 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 14:52:51 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 14:52:52 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 14:52:58 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 14:52:59 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 14:52:59 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 14:53:39 [desktop] Potential memory leak detected: 0.6MB/interval growth rate
+2025-09-12 14:53:40 [desktop] Potential memory leak detected: 0.6MB/interval growth rate
+2025-09-12 14:53:41 [desktop] Potential memory leak detected: 0.7MB/interval growth rate
+2025-09-12 14:53:42 [desktop] Potential memory leak detected: 0.7MB/interval growth rate
+2025-09-12 14:53:43 [desktop] Potential memory leak detected: 0.7MB/interval growth rate
+2025-09-12 14:53:44 [desktop] Potential memory leak detected: 0.8MB/interval growth rate
+2025-09-12 14:53:54 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 14:53:59 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 14:54:00 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 14:54:16 [desktop] Potential memory leak detected: 0.7MB/interval growth rate
+2025-09-12 14:54:51 [desktop] Potential memory leak detected: 0.7MB/interval growth rate
+2025-09-12 14:54:52 [desktop] Potential memory leak detected: 0.6MB/interval growth rate
+2025-09-12 14:54:53 [desktop] Potential memory leak detected: 0.7MB/interval growth rate
+2025-09-12 14:54:54 [desktop] Potential memory leak detected: 0.7MB/interval growth rate
+2025-09-12 14:54:55 [desktop] Potential memory leak detected: 0.7MB/interval growth rate
+2025-09-12 14:54:56 [desktop] Potential memory leak detected: 0.7MB/interval growth rate
+2025-09-12 14:54:58 [desktop] Potential memory leak detected: 0.6MB/interval growth rate
+2025-09-12 14:54:59 [desktop] Potential memory leak detected: 1MB/interval growth rate
+2025-09-12 14:55:06 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 14:55:16 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-12 15:06:08 [desktop] Supported camera dim range: 1280x720
+2025-09-12 15:06:09 [desktop] Camera does not support zoom
+2025-09-12 15:06:09 [desktop] [START_CAM] Camera started: 1280x720
+2025-09-12 15:06:09 [desktop] [INIT] Camera started, global & logging listeners ready, HUD mounted, debugHUD mounted
+2025-09-12 15:06:09 [desktop] [RESUME_PROMPT] Found 1 draft(s)
+2025-09-12 15:06:15 [desktop] [RESUME_PROMPT] User chose to resume session 00021209
+2025-09-12 15:06:15 [desktop] [RESUME_PROMPT] Resumed session 00021209
+2025-09-12 15:06:15 [desktop] [idb-photos] DB opened
+2025-09-12 15:06:15 [desktop] [LOADING] HUD initialized with content
+2025-09-12 15:06:15 [desktop] [READY] Operator is interacting with the app...
+2025-09-12 15:07:04 [desktop] Supported camera dim range: 1280x720
+2025-09-12 15:07:05 [desktop] Camera does not support zoom
+2025-09-12 15:07:05 [desktop] [START_CAM] Camera started: 1280x720
+2025-09-12 15:07:05 [desktop] [INIT] Camera started, global & logging listeners ready, HUD mounted, debugHUD mounted
+2025-09-12 15:07:05 [desktop] [RESUME_PROMPT] Found 1 draft(s)
+2025-09-12 15:07:06 [desktop] [RESUME_PROMPT] User chose to resume session 00021209
+2025-09-12 15:07:06 [desktop] [RESUME_PROMPT] Resumed session 00021209
+2025-09-12 15:07:06 [desktop] [idb-photos] DB opened
+2025-09-12 15:07:06 [desktop] [LOADING] HUD initialized with content
+2025-09-12 15:07:06 [desktop] [READY] Operator is interacting with the app...
+2025-09-12 15:07:10 [desktop] [UPLOAD_SESSION] photos: 1 • checks: 12 • items: 2 {"photoCount":1,"checkCount":12,"itemCount":2}
+2025-09-12 15:07:13 [desktop] [UPLOAD_SESSION] Session uploaded successfully
+
+=== QC SESSION: 00021209 ===
+Session ID: 00021209-1757533517253
+Device: web (Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36)
+App Version: 1.0.5
+2025-09-10 15:43:42 [desktop] Supported camera dim range: 1280x720
+2025-09-10 15:43:42 [desktop] Camera does not support zoom
+2025-09-10 15:43:42 [desktop] [START_CAM] Camera started: 1280x720
+2025-09-10 15:43:42 [desktop] [INIT] Camera started, global & logging listeners ready, HUD mounted, debugHUD mounted
+2025-09-10 15:43:42 [desktop] [RESUME_PROMPT] Found 1 draft(s)
+2025-09-10 15:43:42 [desktop] [RESUME_PROMPT] User chose NOT to resume session 00021224
+2025-09-10 15:43:42 [desktop] [WAITING_SCAN] Waiting for barcode…
+2025-09-10 15:43:42 [desktop] [idb-photos] DB opened
+2025-09-10 15:45:16 [desktop] [WAITING_SCAN] SO 00021209 • items: 2 {"customer":"XXXXX"}
+2025-09-10 15:45:17 [desktop] [LOADING] No existing Sharepoint photos for this order.
+2025-09-10 15:45:17 [desktop] [SESSION-MANAGER LISTENER] Session init 00021209
+2025-09-10 15:45:17 [desktop] [LOADING] HUD initialized with content
+2025-09-10 15:45:17 [desktop] [READY] Operator is interacting with the app...
+2025-09-10 15:45:22 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-10 15:45:27 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-10 15:45:28 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-10 15:45:32 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-10 15:45:34 [desktop] [UPLOAD_SESSION] photos: 4 • checks: 4 • items: 2 {"photoCount":4,"checkCount":4,"itemCount":2}
+2025-09-10 15:45:41 [desktop] [UPLOAD_SESSION] Session uploaded successfully
+
+=== QC SESSION: 00021209 ===
+Session ID: 00021209-1757528908176
+Device: web (Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36)
+App Version: 1.0.5
+2025-09-10 14:28:21 [desktop] Supported camera dim range: 1280x720
+2025-09-10 14:28:21 [desktop] Camera does not support zoom
+2025-09-10 14:28:21 [desktop] [START_CAM] Camera started: 1280x720
+2025-09-10 14:28:21 [desktop] [INIT] Camera started, global & logging listeners ready, HUD mounted, debugHUD mounted
+2025-09-10 14:28:21 [desktop] [RESUME_PROMPT] No drafts found
+2025-09-10 14:28:21 [desktop] [WAITING_SCAN] Waiting for barcode…
+2025-09-10 14:28:21 [desktop] [idb-photos] DB opened
+2025-09-10 14:28:24 [desktop] [WAITING_SCAN] SO 00021209 • items: 2 {"customer":"XXXXX"}
+2025-09-10 14:28:25 [desktop] [LOADING] Existing photos found in Sharepoint
+2025-09-10 14:28:28 [desktop] [LOADING] Operator will append; 1 existing photo(s) found.
+2025-09-10 14:28:28 [desktop] [SESSION-MANAGER LISTENER] Session init 00021209
+2025-09-10 14:28:28 [desktop] [LOADING] HUD initialized with content
+2025-09-10 14:28:28 [desktop] [READY] Operator is interacting with the app...
+2025-09-10 14:53:24 [desktop] [CAM.js] Camera stream stopped
+2025-09-10 15:36:12 [desktop] Supported camera dim range: 1280x720
+2025-09-10 15:36:13 [desktop] Camera does not support zoom
+2025-09-10 15:36:13 [desktop] [START_CAM] Camera started: 1280x720
+2025-09-10 15:36:13 [desktop] [INIT] Camera started, global & logging listeners ready, HUD mounted, debugHUD mounted
+2025-09-10 15:36:13 [desktop] [RESUME_PROMPT] Found 1 draft(s)
+2025-09-10 15:36:14 [desktop] [RESUME_PROMPT] User chose to resume session 00021209
+2025-09-10 15:36:14 [desktop] [RESUME_PROMPT] Resumed session 00021209
+2025-09-10 15:36:14 [desktop] [idb-photos] DB opened
+2025-09-10 15:36:14 [desktop] [LOADING] HUD initialized with content
+2025-09-10 15:36:14 [desktop] [READY] Operator is interacting with the app...
+2025-09-10 15:36:18 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-10 15:36:19 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-10 15:36:19 [desktop] [CAPTURE] Photo captured: 1280x720, thumbnail: 480x270
+2025-09-10 15:36:20 [desktop] [UPLOAD_SESSION] photos: 3 • checks: 2 • items: 2 {"photoCount":3,"checkCount":2,"itemCount":2}
+2025-09-10 15:36:20 [desktop] [ERROR] [UPLOADING] Upload failed: Unauthorized: Invalid or missing API token
+2025-09-10 15:36:20 [desktop] [READY] Operator is interacting with the app...
+2025-09-10 15:36:40 [desktop] Supported camera dim range: 1280x720
+2025-09-10 15:36:40 [desktop] Camera does not support zoom
+2025-09-10 15:36:40 [desktop] [START_CAM] Camera started: 1280x720
+2025-09-10 15:36:40 [desktop] [INIT] Camera started, global & logging listeners ready, HUD mounted, debugHUD mounted
+2025-09-10 15:36:40 [desktop] [RESUME_PROMPT] Found 1 draft(s)
+2025-09-10 15:36:41 [desktop] [RESUME_PROMPT] User chose to resume session 00021209
+2025-09-10 15:36:41 [desktop] [RESUME_PROMPT] Resumed session 00021209
+2025-09-10 15:36:41 [desktop] [idb-photos] DB opened
+2025-09-10 15:36:41 [desktop] [LOADING] HUD initialized with content
+2025-09-10 15:36:41 [desktop] [READY] Operator is interacting with the app...
+2025-09-10 15:36:42 [desktop] [UPLOAD_SESSION] photos: 3 • checks: 2 • items: 2 {"photoCount":3,"checkCount":2,"itemCount":2}
+2025-09-10 15:36:48 [desktop] [UPLOAD_SESSION] Session uploaded successfully
+

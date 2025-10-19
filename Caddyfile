@@ -1,0 +1,44 @@
+﻿{
+	# Global options
+	auto_https disable_redirects
+}
+
+# Site configuration for both domains
+photos.joulin, localhost, [ip] {
+	# Use internal CA for localhost/development
+	tls internal
+
+	# Security headers
+	header {
+		Strict-Transport-Security "max-age=31536000"
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "no-referrer-when-downgrade"
+	}
+
+	# Compression
+	encode zstd gzip
+
+	# CA files (directory browse ok). Using handle_path here is fine if you WANT /ca stripped.
+	handle_path /ca/* {
+		root * caddy-data\caddy\pki\authorities\local
+		file_server browse
+	}
+
+	# --- API: DO NOT STRIP /api ---
+	@api path /api/*
+	handle @api {
+		reverse_proxy 127.0.0.1:8000 {
+			header_up X-Real-IP {remote_host}
+			header_up X-Forwarded-For {remote_host}
+			header_up X-Forwarded-Proto {scheme}
+			header_up Host {host}
+		}
+	}
+
+	# Everything else → your FastAPI static (served by Uvicorn)
+	handle {
+		reverse_proxy 127.0.0.1:8000 {
+			header_up X-Real-IP {remote_host}
+		}
+	}
+}

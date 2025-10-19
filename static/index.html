@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Joulin QC & Shipping Photos App</title>
+		<meta
+			name="viewport"
+			content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"
+		/>
+		<link
+			rel="icon"
+			href="favicon/favicon-16x16.png"
+			sizes="16x16"
+			type="image/png"
+		/>
+		<link
+			rel="icon"
+			href="favicon/favicon-32x32.png"
+			sizes="32x32"
+			type="image/png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			href="favicon/apple-touch-icon.png"
+			sizes="180x180"
+		/>
+		<link rel="stylesheet" href="style.css" />
+		<script type="module" src="./src/main.js" defer></script>
+	</head>
+	<body>
+		<!-- Debug HUD -->
+		<div id="debug-hud" style="display: none">
+			<div class="debug-panel">
+				<div class="debug-section">
+					<strong>Performance</strong>
+					<div>FPS: <span id="debug-fps">--</span></div>
+					<details id="debug-mem" class="ls-details">
+						<summary class="ls-summary">
+							<span class="dropdown-caret" aria-hidden="true"></span>
+							<div>Current Heap Mem Size:</div>
+							<span class="ls-preview">--</span>
+						</summary>
+						<pre class="ls-pre" id="debug-mem-pre"></pre>
+					</details>
+					<div>localStorage Mem: <span id="debug-localstor">--</span></div>
+					<div>IndexedDb Mem: <span id="idb-mem">--</span></div>
+					<div>Total Mem: <span id="total-mem">--</span></div>
+					<div>IndexedDb Photo Count: <span id="idb-photonum">--</span></div>
+
+					<div id="localstorage-table-container">
+						<!-- New container for the table -->
+						<table id="localstorage-table" border="1">
+							<thead>
+								<tr>
+									<th>Key</th>
+									<th>Value</th>
+								</tr>
+							</thead>
+							<tbody id="table-body"></tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="debug-section">
+					<strong>Session</strong>
+					<div>Order: <span id="debug-order">--</span></div>
+					<div>Item: <span id="debug-item">--</span></div>
+					<div>Photos: <span id="debug-photos">--</span></div>
+					<details id="debug-logs" class="ls-details">
+						<summary class="ls-summary">
+							<span class="dropdown-caret" aria-hidden="true"></span>
+							<div>Logs</div>
+							<span class="ls-preview">No logs</span>
+						</summary>
+						<pre class="ls-pre" id="debug-logs-pre"></pre>
+					</details>
+				</div>
+
+				<div class="debug-section">
+					<strong>Camera</strong>
+					<div>
+						Current Photo Capture Size: <span id="debug-camera">--</span>
+					</div>
+					<div>Screen Render Size: <span id="debug-render">--</span></div>
+					<div>Max Capture Size: <span id="debug-max-cam">--</span></div>
+					<div>Available cams: <span id="list-cams">--</span></div>
+					<div>Ready: <span id="debug-ready">--</span></div>
+				</div>
+			</div>
+		</div>
+
+		<!-- bottom toolbar (unchanged) -->
+		<div class="bottom-bar">
+			<button id="manual-input" class="aux" disabled>Enter Manually</button>
+			<button id="shutter" class="shutter"></button>
+			<select id="debug" class="aux">
+				<option value="">Debug</option>
+				<option disabled>Show OCR Boxes</option>
+				<option disabled>Show Raw Model FPS</option>
+			</select>
+		</div>
+
+		<main id="app">
+			<!-- single full-screen page; we slide others in later with JS -->
+			<section id="photo-screen" class="screen">
+				<div class="cam-wrap">
+					<div id="zoom-touchzone">
+						<!-- Native-style zoom indicator overlay -->
+						<div id="zoom-indicator" class="zoom-indicator">
+							<div class="zoom-scale">
+								<div class="zoom-markers">
+									<div class="zoom-marker" data-zoom="1">1×</div>
+									<div class="zoom-marker" data-zoom="3">3×</div>
+									<div class="zoom-marker" data-zoom="5">5×</div>
+									<div class="zoom-marker" data-zoom="8">8×</div>
+									<div class="zoom-marker" data-zoom="10">10×</div>
+								</div>
+								<div class="zoom-slider-track">
+									<div class="zoom-slider-thumb" id="zoom-thumb"></div>
+								</div>
+							</div>
+							<div class="zoom-value-display" id="zoom-display">1.0×</div>
+						</div>
+
+						<!-- Touch feedback overlay -->
+						<div id="touch-feedback" class="touch-feedback"></div>
+					</div>
+					<video id="cam" playsinline muted></video>
+					<!-- overlay shown to user when frozen -->
+					<canvas id="freezeCanvas"></canvas>
+					<canvas id="thumbCanvas" aria-hidden="true"></canvas>
+				</div>
+
+				<!-- permanent HUD ---------------------------------------------- -->
+				<aside id="sidePanel">
+					<button id="toggleHud" title="Show / hide">&#9776;</button>
+					<header>
+						<h3 id="custName">–</h3>
+						<p id="soInfo"></p>
+						<ul id="itemList"></ul>
+						<p id="partDesc"></p>
+					</header>
+					<div id="panel-body">
+						<article id="itemDesc"></article>
+					</div>
+
+					<div class="tray-container">
+						<div
+							id="thumbTrayHeader"
+							class="tray-toggle"
+							aria-controls="thumbTray"
+							aria-expanded="true"
+						>
+							<span class="icon icon-hamburger" aria-hidden="true"></span>
+							<span class="icon icon-chevron" aria-hidden="true">⌃</span>
+						</div>
+						<div id="thumbTray"></div>
+					</div>
+
+					<button id="doneBtn" class="success">Done</button>
+				</aside>
+
+				<div id="status" class="status">Initializing…</div>
+			</section>
+
+			<!-- confirmation dialog (unchanged) ---------------------------------- -->
+			<div id="standby-modal" hidden>
+				<div class="content">
+					<h2>Scan Sales Order Number</h2>
+					<div class="modal-title" id="standby-title">Waiting for scan…</div>
+
+					<p id="progress-text"></p>
+					<div class="spinner" hidden></div>
+
+					<!-- Progress bar - now positioned within modal content -->
+					<div id="progress" hidden>
+						<div id="progress-bar"></div>
+						<div id="progress-label"></div>
+					</div>
+
+					<!-- Manual entry UI (hidden by default; not a <form>) -->
+					<div class="manual-wrap" hidden>
+						<input
+							id="orderInput"
+							type="number"
+							inputmode="numeric"
+							placeholder="ex. '00021209'"
+							autocomplete="one-time-code"
+						/>
+						<div class="btn-row">
+							<button id="orderSubmit" type="button" class="primary">
+								Enter
+							</button>
+							<button id="orderCancel" type="button" class="ghost">
+								Cancel
+							</button>
+						</div>
+					</div>
+					<!-- Confirm sharepoint photos append modal -->
+					<div id="confirm-content" hidden>
+						<div id="modal-message-body"></div>
+						<div id="modal-message-footer"></div>
+						<div class="btn-row">
+							<button id="confirm-ok" type="button" class="primary">OK</button>
+							<button id="confirm-cancel" type="button" class="ghost">
+								Cancel
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>

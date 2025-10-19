@@ -1,0 +1,61 @@
+
+Why segmentation vs detection:
+----------------------------------------------------------------
+- Segmentation provides pixel-level accuracy, allowing for precise object boundaries, while detection offers bounding boxes around objects.
+- Use segmentation when you need detailed understanding of object shapes and interactions; use detection for faster, less detailed identification.
+- Segmentation is more computationally intensive but essential for tasks like counting overlapping objects or analyzing object shapes.
+- Detection is suitable for applications where speed is crucial and precise boundaries are not as important, such as in real-time object tracking or simple classification tasks.
+
+How to train:
+----------------------------------------------------------------
+Training is usually pretty straightforward, we're just fine-tuning the pretrained yolo model. The code is provided in a
+google colab notebook, and it really is a matter of plugging in our dataset with (crucially) the right labels for our type of detection. In our case,
+this will be polygon masks for segmentation, since we need to map the contours of the objects we want our model to be able to isolate.
+
+Good guide: https://blog.roboflow.com/train-yolov11-instance-segmentation/
+
+
+Grounding DINO prompting: a balance of detail and clarity
+----------------------------------------------------------------
+Grounding DINO is designed for open-set object detection, meaning it can detect objects based on natural language descriptions, even if it hasn't been specifically trained on those objects. The effectiveness of the prompts you provide can significantly impact its performance. 
+Here's what to consider regarding the level of detail and length of prompts for Grounding DINO:
+Natural Language is Key: Grounding DINO excels when provided with natural language prompts describing the objects you want to detect. This can range from simple single words like "dog", "cat", or "car" to more complex phrases or descriptions like "a person sitting on a sofa" or "the red car".
+The Power of Referring Expressions: Grounding DINO is particularly adept at interpreting referring expressions—phrases that describe objects in detail, helping the model pinpoint specific instances within an image. For example, instead of just "car", you could use "a vintage blue car parked on the street" to refine the detection.
+Balancing Specificity and Generalization: While detailed prompts can improve accuracy for specific objects, remember that Grounding DINO aims to be a general-purpose detector. Overly specific prompts might inadvertently constrain its ability to detect variations of the same object.
+Sub-sentence Level Feature Extraction: Grounding DINO incorporates a "sub-sentence level text feature" extraction technique. This means that if your prompt contains multiple, distinct concepts (e.g., "a person sitting on the sofa and a dog standing by the table"), the model can process these as separate chunks, preventing the mixing of unrelated concepts during feature extraction.
+Prompting for Annotation Efficiency: When used with tools like Label Studio for image annotation, Grounding DINO can be effectively prompted with natural language queries to suggest bounding boxes, streamlining the annotation process.
+Maximum Prompt Length: The maximum number of tokens allowed in the input text sequence is 256, according to GitHub. 
+In essence, Grounding DINO offers flexibility in prompt construction. You can start with simple category names and gradually add more descriptive phrases to refine the detection, leveraging its strong grounding abilities to achieve accurate results, according to arXiv. 
+
+
+How to take good photos:
+----------------------------------------------------------------
+2 How to shoot images while collecting training data
+
+Guideline: Take photos exactly as the operator would: parts in a small heap on the packing table, surrounded by boxes/tools.	
+Rationale: YOLO learns the true background → fewer false positives in prod.
+Guideline: Include occlusions & overlaps.	
+Rationale: Instance-seg segmentation teaches the model to separate touching parts.
+Guideline: Mix single-part close-ups (15 %) with real heaps (85 %).	
+Rationale: Gives the model clean exemplars of edge outlines; boosts precision.
+Guideline: Shoot 3–4 lighting conditions (morning, LED strips, daylight).	
+Rationale: Reduces domain shift; avoids brightness-based misses.
+Guideline: Immediate annotation plan: draw a single polygon per part in the heap. Yes, that’s labor-intensive; use CVAT’s copy-mask tool or Label Studio’s auto-segment-and-nudge to speed up.	
+Rationale: High-quality masks ⇒ fewer epochs, better count accuracy.
+
+Bottom line: The more realistic the scene you label, the less “domain gap” you’ll fight later.
+
+3. Answering your data-collection question
+----------------------------------------------------------------
+“Should I shoot messy heaps and label each part?”
+Yes — that’s the best possible training data for YOLO v9-Seg later:
+
+Scene realism matters: the network learns the true clutter & lighting.
+Segmentation masks teach separation: even when parts overlap, instance masks
+tell the model where one part ends and the next begins.
+Augment clean single-part shots too: 10-15 % of your dataset should be isolated parts to anchor the shape/texture distribution.
+Labeling heaps is slower, so use helpers:
+
+CVAT’s ‘Smart polygon’ or Label Studio’s auto-mask to rough-in each part.
+Fix only the masks where boundaries are wrong.
+Copy-paste masks for repeated identical shapes (CVAT can auto-propagate).

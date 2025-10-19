@@ -1,0 +1,19 @@
+6 | Hybrid & practical pipeline suggestion
+Capture module: overhead 12 MP camera, fixed distance, LED strip, matte background color that contrasts most foams & grippers.
+Rapid coarse segmentation (0.1 s): classical color/depth mask to nuke the table/background.
+Instance-level pass (0.5–2 s):
+Try Count-Anything (SAM + CLIP prompt) first.
+If confidence < threshold OR mask-merge detected → fall back to few-shot Counting-DETR with an exemplar cropped automatically from the largest visible item.
+Post-processing (0.1 s): watershed on overlaps; tiny-component filtering for dust; geometric checks (aspect ratio, area).
+Optional cross-modality check: if a scale is embedded in the bench, compare measured weight to expected (acts as a tie-breaker for stack-height ambiguities).
+UI / QC feedback: overlay instance outlines + a green/red count badge; log the annotated photo for traceability.
+Total wall-time easily < 5 s on an RTX 4060 mobile.
+
+1 Focus first on capture & separation, not just the model
+
+90 % of counting errors in factories are caused by input conditions (lighting, angle, contrast, background) that make adjacent items merge into one “object.”
+Action: fix this once and every model you try will immediately look smarter.
+Quick win	Why it helps the two models you’re testing
+Matte, high-contrast placemat (e.g. black PVC sheet for orange rings, grey for silver grippers).	Lets SAM output one clean foreground mask → CountGD gets better box proposals.
+Over-head LED ring with diffuser	Kills shadows between stacked foams → clearer boundary cues for watershed (§ 3).
+Fixed shooting rig (camera height & FOV jig)	Guarantees that one ring always spans ~X pixels → lets you turn physical ⌀ and thickness into expected mask area or pixel-height per layer heuristics.

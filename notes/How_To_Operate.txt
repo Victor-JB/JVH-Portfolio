@@ -1,0 +1,20 @@
+
+LOCAL DEV:
+1. The run-dev.sh file does all of the mkcert https certificate installation
+and also boots the app, docs should be contained within the file
+
+PROD:
+1. Run the setup-prod-services.ps1 powershell, it builds the app...
+ - that runs start-app-prod.bat which runs the python uvicorn app
+ - setup-services sets up the nssm joulinphotos_nssm_serice + caddy services, which are the names of the background tasks
+running via nssm
+ - then there is the github webhook to setup (techically optional) that also has a setup-webhook-infra.ps1 that you run
+ - the certificates are managed automatically by caddy, an caddy is set up via my Caddyfile, so that's nice
+
+2. Refer to APP-FLOW.md file for how the app flow works; I would recommend just looking at
+the primary driver files aptly named driver.js and fsm.js. FSM (finite state machine)
+defines the state machine that drives state transitions within the app; not that
+there are that many, but still a useful abstraction imo
+
+Useful commands (custom commands created on Joulin server):
+1. nssm_list -- my custom command to list all set up NSSM apps and their status (running, stopped, etc.)

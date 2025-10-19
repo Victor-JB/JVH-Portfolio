@@ -1,0 +1,66 @@
+{
+  "category": "Structure",
+  "in_order": 1,
+  "items": [
+    {
+      "no": "1",
+      "item": "X",
+      "spec": "Drawing",
+      "tool": "Meets Design"
+    },
+    {
+      "no": "2",
+      "item": "X",
+      "spec": "Subjective",
+      "tool": "Visual"
+    },
+    {
+      "no": "3",
+      "item": "X",
+      "spec": "Not loose",
+      "tool": "Touch"
+    },
+    {
+      "no": "4",
+      "item": "X",
+      "spec": "<3mm",
+      "tool": "Straight edge/rule"
+    },
+    {
+      "no": "5",
+      "item": "X",
+      "spec": "Present",
+      "tool": "Visual"
+    },
+    {
+      "no": "6",
+      "item": "X",
+      "spec": "<Flush",
+      "tool": "Visual/touch"
+    },
+    {
+      "no": "7",
+      "item": "X",
+      "spec": "Correct",
+      "tool": "Drawing"
+    },
+    {
+      "no": "8",
+      "item": "X",
+      "spec": "Correct",
+      "tool": "Visual/drawing"
+    },
+    {
+      "no": "9",
+      "item": "X",
+      "spec": "Correct",
+      "tool": "Visual/sales sheet"
+    },
+    {
+      "no": "10",
+      "item": "X",
+      "spec": "<2mm",
+      "tool": "Straight edge/rule"
+    }
+  ]
+}

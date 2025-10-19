@@ -1,0 +1,36 @@
+{
+  "category": "Electrical",
+  "in_order": 4,
+  "items": [
+    {
+      "no": "19",
+      "item": "X",
+      "spec": "Correct",
+      "tool": "Visual"
+    },
+    {
+      "no": "20",
+      "item": "X",
+      "spec": "Correct",
+      "tool": "Drawing"
+    },
+    {
+      "no": "21",
+      "item": "X",
+      "spec": "Secure",
+      "tool": "Touch"
+    },
+    {
+      "no": "22",
+      "item": "X",
+      "spec": "Correct",
+      "tool": "Visual/sales sheet"
+    },
+    {
+      "no": "23",
+      "item": "X",
+      "spec": "Correct",
+      "tool": "Test"
+    }
+  ]
+}

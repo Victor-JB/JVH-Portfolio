@@ -1,0 +1,46 @@
+Category,No.,Inspection Item,Spec,Tool
+Structure,1,X,Drawing,Meets Design
+Structure,2,X,Subjective,Visual
+Structure,3,X,Not loose,Touch
+Structure,4,X,<3mm,Straight edge/rule
+Structure,5,X,Present,Visual
+Structure,6,X,<Flush,Visual/touch
+Structure,7,X,Correct,Drawing
+Structure,8,X,Correct,Visual/drawing
+Structure,9,X,Correct,Visual/sales sheet
+Structure,10,X,<2mm,Straight edge/rule
+Foam,11,X,<2mm,Straight edge/rule
+Foam,12,X,,Touch/ visual
+Foam,13,X,See chart,Rule
+Fit & Finish,14,X,,Visual
+Fit & Finish,15,X,Deburred,Visual/touch
+Fit & Finish,16,X,Correct,Visual
+Fit & Finish,17,X,Present,Visual
+Fit & Finish,18,X,Correct,Visual
+Electrical,19,X,Correct,Visual
+Electrical,20,X,Correct,Drawing
+Electrical,21,X,Secure,Touch
+Electrical,22,X,Correct,Visual/sales sheet
+Electrical,23,X,Correct,Test
+Blower,24,X,Correct,Drawing
+Blower,25,X,Drawing,Visual
+Blower,26,X,Correct,Drawing
+Blower,27,X,Correct,Drawing
+Blower,28,X,Correct,Drawing
+Blower,29,X,,Visual / Photo
+Blower,30,X,Present,Visual
+Blower,31,X,,Visual
+Pneumatics,32,X,Correct,Visual/Sales sheet
+Testing,33,X,all close,Visual
+Testing,34,X,Secure,Test
+Testing,35,X,,-0.357
+Testing,36,X,,-0.341
+Testing,37,X,,
+Testing,38,X,,
+Testing,39,X,Secure,Test
+Testing,40,X,,Camera
+Pre Ship,41,X,Install,
+Pre Ship,42,X,Install,
+Pre Ship,43,X,Present,
+Pre Ship,44,X,,
+Pre Ship,45,X,,

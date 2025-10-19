@@ -1,0 +1,36 @@
+{
+  "category": "Fit & Finish",
+  "in_order": 3,
+  "items": [
+    {
+      "no": "14",
+      "item": "X",
+      "spec": "",
+      "tool": "Visual"
+    },
+    {
+      "no": "15",
+      "item": "X",
+      "spec": "Deburred",
+      "tool": "Visual/touch"
+    },
+    {
+      "no": "16",
+      "item": "X",
+      "spec": "Correct",
+      "tool": "Visual"
+    },
+    {
+      "no": "17",
+      "item": "X",
+      "spec": "Present",
+      "tool": "Visual"
+    },
+    {
+      "no": "18",
+      "item": "X",
+      "spec": "Correct",
+      "tool": "Visual"
+    }
+  ]
+}

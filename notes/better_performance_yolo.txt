@@ -1,0 +1,9 @@
+Strategies for increasing performance:
+
+5 | Classical image-processing baselines
+Especially useful as post-processing for the ML masks:
+
+Color thresholding & morphological ops – Bright-orange rings are easy to isolate; apply opening → distance transform → watershed to split touching foams.
+Edge-based shape detection – Hough circles / rectangles to detect individual ring profiles.
+Motion cues – Ask the shipper to give the tray a tiny shake; frame differencing separates stacked layers.
+Controlled capture – Place products on a matte, high-contrast “placemat”, add a top-down LED ring, and fix camera height. This alone can boost SAM’s instance separation accuracy by double-digit percentages.
