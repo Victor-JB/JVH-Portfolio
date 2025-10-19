@@ -8,7 +8,7 @@
 ## 🔍 About This Project
 
 This repository contains a **sanitized version** of the internal Photos QC Tool I designed and implemented as an **Engineering Intern at Joulin Vacuum Handling (Summer 2025)**.  
-The system was deployed on-premises to automate **quality-control photo capture, checklist generation, and SharePoint upload**, improving traceability and cutting operator time by **~50%**.
+The system is actively deployed on-premises to automate **quality-control photo capture, checklist generation, and SharePoint upload**, improving traceability and cutting operator time by **~95%**.
 
 ---
 
